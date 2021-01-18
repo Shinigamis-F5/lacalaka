@@ -20,6 +20,14 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role', //default normal user, faker both, regist both ask about
+        'address',
+        'openingTimes',
+        'img',
+        'organization',
+        'city',
+        'description',
+       // 'phone'
     ];
 
     /**
