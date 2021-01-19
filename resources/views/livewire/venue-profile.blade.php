@@ -15,19 +15,6 @@
             <li class="mb-4"><strong>Description:</strong> {{ $venue->description}}</li>
             <li><strong>Phone:</strong> {{ $venue->phone}}</li>
         </ul>
-
-
-        {{-- 
-            'name' => $this->faker->name,
-            'email' => $this->faker->unique()->safeEmail,
-            'address' => $this->faker->address(),
-            'openingTimes' => $this->faker->sentence(4),
-            'img' => $this->faker->imageUrl(640, 480),
-            'organization' => $this->faker->sentence(5),
-            'city' => $this->faker->city(),
-            'description' => $this->faker->paragraph(3),
-            'phone' => $this->faker->phoneNumber,    
-        --}}
     </div>
 
 </div>
