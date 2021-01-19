@@ -39,6 +39,12 @@
 
         <livewire:header/>
         </div>    
-        @livewireScripts      
+        
+        <main>
+            <livewire:party-card-homepage/>
+        </main>
+        
+        
+        @livewireScripts     
     </body>
 </html>

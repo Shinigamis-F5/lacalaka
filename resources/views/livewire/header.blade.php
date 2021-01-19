@@ -24,7 +24,6 @@
                     </ol>
                 </div>
         @endif
-
     </navbar>
-
 </div>
+
