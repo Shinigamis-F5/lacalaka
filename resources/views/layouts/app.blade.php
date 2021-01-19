@@ -13,6 +13,7 @@
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
+        @livewireStyles
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
@@ -33,5 +34,7 @@
                 {{ $slot }}
             </main>
         </div>
+
+        @livewireScripts
     </body>
 </html>
