@@ -1,6 +1,6 @@
 <div class="flex">
     
-    <img src="https://images.vexels.com/media/users/3/184839/isolated/lists/075c413496f834ab41b55c283434f614-calavera-mexicana-calavera-plana.png" class="w-20 h-20">
+    <img src="https://images.vexels.com/media/users/3/184839/isolated/lists/075c413496f834ab41b55c283434f614-calavera-mexicana-calavera-plana.png" class="w-10 h-10">
    
     <h1>Fiestas a la Carta</h1>
     <h3>La Calaka</h3>
