@@ -6,6 +6,7 @@ use Livewire\Component;
 
 class PartyCardHomepage extends Component
 {
+
     public $party = [
 
         "id" => "1",
@@ -15,6 +16,6 @@ class PartyCardHomepage extends Component
 
     public function render()
     {
-        return view('livewire.party-card-homepage');
+        return view('livewire.party-card-homepage'); //pasar $party por aqyui
     }
 }
