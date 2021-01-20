@@ -28,9 +28,10 @@ class VenueProfileTest extends TestCase
     public function test_venue_can_see_his_name_in_profile_page()
     {
         $venue = User::factory()->create();
+        $name = $venue->name;
 
         $response = $this->actingAs($venue)
             ->get('/venue-profile')
-            ->assertViewHas($venue->name);
+            ->assertSee($name);
     }
 }
