@@ -25,4 +25,8 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+Route::get('/venue-profile', function () {
+    return view('dashboard-venue-profile');
+})->middleware(['auth'])->name('venue.profile');
+
 require __DIR__ . '/auth.php';

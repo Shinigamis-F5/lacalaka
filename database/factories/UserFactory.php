@@ -25,7 +25,7 @@ class UserFactory extends Factory
         return [
             'name' => $this->faker->name,
             'email' => $this->faker->unique()->safeEmail,
-            'role' => 'user',//$this->faker->word(), 
+            'role' => 'private_user', 
             'address' => $this->faker->address(),
             'openingTimes' => $this->faker->sentence(4),
             'img' => $this->faker->imageUrl(640, 480),

@@ -11415,6 +11415,10 @@ select {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
+.font-cursive {
+  font-family: Salsa, cursive;
+}
+
 .font-thin {
   font-weight: 100;
 }
@@ -42097,6 +42101,10 @@ select {
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 
+  .sm\:font-cursive {
+    font-family: Salsa, cursive;
+  }
+
   .sm\:font-thin {
     font-weight: 100;
   }
@@ -72699,6 +72707,10 @@ select {
 
   .md\:font-mono {
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+
+  .md\:font-cursive {
+    font-family: Salsa, cursive;
   }
 
   .md\:font-thin {
@@ -103305,6 +103317,10 @@ select {
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 
+  .lg\:font-cursive {
+    font-family: Salsa, cursive;
+  }
+
   .lg\:font-thin {
     font-weight: 100;
   }
@@ -133909,6 +133925,10 @@ select {
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 
+  .xl\:font-cursive {
+    font-family: Salsa, cursive;
+  }
+
   .xl\:font-thin {
     font-weight: 100;
   }
@@ -164511,6 +164531,10 @@ select {
 
   .\32xl\:font-mono {
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+
+  .\32xl\:font-cursive {
+    font-family: Salsa, cursive;
   }
 
   .\32xl\:font-thin {
