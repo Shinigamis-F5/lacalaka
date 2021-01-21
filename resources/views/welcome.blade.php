@@ -1,10 +1,10 @@
 @extends('layouts.layout')
      @section('content')   
-        <main>
+        <div class="m-0">
             
             <livewire:homepage-party-list/>
 
-        </main>
+        </div>
      @endsection   
         
           

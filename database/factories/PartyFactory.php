@@ -23,7 +23,7 @@ class PartyFactory extends Factory
     {
         return [
             'title'=>$this->faker->name,
-            'cover'=>$this->faker->name,
+            'cover'=>"https://picsum.photos/200",
             'description'=>$this->faker->name,
             'date'=>$this->faker->date,
             'time'=>$this->faker->time,
