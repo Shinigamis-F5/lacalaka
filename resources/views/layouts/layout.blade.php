@@ -21,10 +21,10 @@
 </head>
 <body>
     <livewire:header/>
-    @livewireScripts  
     <main>
         @yield('content')
     </main>
     
+    @livewireScripts  
 </body>
 </html>
