@@ -7,15 +7,17 @@ use Livewire\Component;
 class PartyCardHomepage extends Component
 {
 
-    public $party = [
+    public $party;
 
-        "id" => "1",
-        "title" => "SoccaParty",
-        "img" => "https://picsum.photos/200/300",
-    ];
-
+   public function mount($party) {
+       $this->party = $party;
+   }
+    
     public function render()
     {
-        return view('livewire.party-card-homepage'); //pasar $party por aqyui
+        return view('livewire.party-card-homepage', [
+            
+            'party' => $this->party
+        ]);
     }
 }

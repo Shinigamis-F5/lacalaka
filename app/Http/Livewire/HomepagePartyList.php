@@ -3,14 +3,21 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+use App\Models\Party;
 
 class HomepagePartyList extends Component
 {
-    public $partyList = "mecguenlasmuelasdeltailwind";
+    public $partyList;
+ 
+    public function mount() {
+
+        $this->partyList = Party::all();
+    }
 
     public function render()
     {   
-        return view('livewire.homepage-party-list'); //put partylist into the argument
+        $partyList = $this->partyList;
+        return view('livewire.homepage-party-list', ['partyList'=>$partyList]); 
     }
 
     
