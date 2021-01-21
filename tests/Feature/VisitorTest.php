@@ -30,6 +30,7 @@ class VisitorTest extends TestCase
     {
         $venue = User::factory()->create([
             'role' => 'venue',
+            'rate' => 0,
         ]);
 
         $id = $venue->id;

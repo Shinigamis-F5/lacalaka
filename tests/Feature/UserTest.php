@@ -4,6 +4,7 @@ namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
+use Livewire\Livewire;
 use Tests\TestCase;
 
 class UserTest extends TestCase
@@ -13,12 +14,9 @@ class UserTest extends TestCase
      *
      * @return void
      */
-    public function test_user_can_rate_venue()
+    public function test_user_can_rating_seccion()
     {
         
-
-        $response = $this->get('/');
-
-        $response->assertStatus(200);
+        
     }
 }

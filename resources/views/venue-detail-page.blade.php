@@ -28,13 +28,7 @@
                     <h1>Hype me!</h1>
                 </div>
 
-                <div class="rating">
-                    <i class="fas fa-glass-martini fa-3x"></i>
-                    <i class="fas fa-glass-martini fa-3x"></i>
-                    <i class="fas fa-glass-martini fa-3x"></i>
-                    <i class="fas fa-glass-martini fa-3x"></i>
-                    <i class="fas fa-glass-martini fa-3x"></i>
-                </div>
+                @livewire('rate.rating', ['user' => $user])
             </div>
 
         </main>

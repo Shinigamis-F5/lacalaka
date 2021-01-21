@@ -11,6 +11,7 @@ class Vote extends Model
 
     protected $fillable = [
         'vote',
+        'user_id',
     ];
 
     public function user()
