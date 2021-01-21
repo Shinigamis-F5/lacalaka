@@ -22,7 +22,15 @@ class PartyFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'title'=>$this->faker->name,
+            'cover'=>$this->faker->name,
+            'description'=>$this->faker->name,
+            'date'=>$this->faker->date,
+            'time'=>$this->faker->time,
+            'location'=>$this->faker->address,
+            'style'=>$this->faker->name,
+            
+            
         ];
     }
 }

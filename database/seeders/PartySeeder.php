@@ -13,6 +13,6 @@ class PartySeeder extends Seeder
      */
     public function run()
     {
-        //
+        
     }
 }

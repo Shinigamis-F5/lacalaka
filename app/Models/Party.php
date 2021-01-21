@@ -9,7 +9,7 @@ class Party extends Model
 {
     use HasFactory;
 
-    protected $table = 'la_calaka';
+    // protected $table = 'la_calaka';
 
     protected $fillable = [
         'title',
@@ -19,6 +19,6 @@ class Party extends Model
         'time',
         'location',
         'style',
-        'id',
+        
     ];
 }
