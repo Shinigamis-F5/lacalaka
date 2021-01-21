@@ -45,6 +45,15 @@
                                 name="password_confirmation" required />
             </div>
 
+            <div class="mt-4">
+                <x-label for="role" :value="__('Role')" />
+
+                <select name="role" id="role" class="block mt-1 w-full" type="text" :value="old('role')" required autofocus>
+                    <option value="private_user">Private User</option>
+                    <option value="venue">Venue</option>
+                </select>
+            </div>
+
             <div class="flex items-center justify-end mt-4">
                 <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
                     {{ __('Already registered?') }}
