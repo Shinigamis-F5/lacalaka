@@ -1,12 +1,12 @@
-<header class="bg-gradient-to-b from-red-500 p-2 mb-4">
+<header class="bg-gradient-to-b from-red-500 p-3 mb-4">
 
 
     <div class="flex items-center mb-5">
         <a href="{{route('home')}}">
-            <img src="https://images.vexels.com/media/users/3/184839/isolated/lists/075c413496f834ab41b55c283434f614-calavera-mexicana-calavera-plana.png" class="w-10 h-10 mr-5">
+            <img src="https://images.vexels.com/media/users/3/184839/isolated/lists/075c413496f834ab41b55c283434f614-calavera-mexicana-calavera-plana.png" class="w-12 h-12 mr-2">
         </a>
-        <h1 class="font-bold font-cursive text-lg md:text-xl lg:text-3xl text-red-900 mx-3">Fiestas a la Carta</h1>
-        <h3 class="mx-3 text-sm md:text-base lg:text-lg">La Calaka</h3>
+        <h1 class="uppercase tracking-wide font-bold font-cursive text-center text-xl md:text-2xl lg:text-3xl text-red-900 mx-3">Fiestas a la Carta</h1>
+        <h3 class="mx-3 text-sm hidden md:block md:text-xl lg:text-2xl">La Calaka</h3>
     </div>
     <navbar class="flex justify-between">
 
