@@ -14,6 +14,7 @@ class CreatePartiesTable extends Migration
     public function up()
     {
         Schema::create('parties', function (Blueprint $table) {
+            $table->id();
             $table->string('title');
             $table->string('cover');
             $table->string('description');
@@ -21,7 +22,6 @@ class CreatePartiesTable extends Migration
             $table->time('time');
             $table->string('location');
             $table->string('style');
-            $table->id();
             $table->timestamps();
         });
     }

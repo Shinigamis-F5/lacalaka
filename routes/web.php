@@ -21,6 +21,7 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
@@ -28,5 +29,7 @@ Route::get('/dashboard', function () {
 Route::get('/venue-profile', function () {
     return view('dashboard-venue-profile');
 })->middleware(['auth'])->name('venue.profile');
+
+Route::get('/party/{party}', [App\Http\Controllers\FrontController::class, 'show'])->name('party.details');
 
 require __DIR__ .'/auth.php';

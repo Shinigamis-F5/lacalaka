@@ -27,10 +27,8 @@ class PartyFactory extends Factory
             'description'=>$this->faker->name,
             'date'=>$this->faker->date,
             'time'=>$this->faker->time,
-            'location'=>$this->faker->address,
+            'location'=>$this->faker->city,
             'style'=>$this->faker->name,
-            
-            
         ];
     }
 }
