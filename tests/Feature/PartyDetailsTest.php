@@ -18,10 +18,12 @@ class PartyDetailsTest extends TestCase
     public function test_example()
     {
         $party = Party::factory()->create();
-        
-    
+           
         $response = $this->get(route('party.details', $party->id));
-        $response->dump();
-        $response->assertStatus(200);
+        $response->assertStatus(200)
+        ->assertViewIs('party-details')
+        ->assertViewHas('party', $party)
+        ->assertSee($party->title);
+        
     }
 }
