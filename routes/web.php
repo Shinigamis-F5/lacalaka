@@ -19,14 +19,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('venue', UserController::class);
+Route::resource('user', UserController::class)->middleware('auth');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/venue-profile', function () {
-    return view('dashboard-venue-profile');
-})->middleware(['auth'])->name('venue.profile');
+Route::get('/profile/{user}', [UserController::class, 'showInDetailFront'])->name('user.profile');
 
 require __DIR__.'/auth.php';
