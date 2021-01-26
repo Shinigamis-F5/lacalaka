@@ -31,8 +31,8 @@
             @endauth
         </div>
         @endif
-        <div x-data="{ showPartyStyles: false }" class="relative justify-self-end">
-            <button @click="showPartyStyles = true" class="inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-1 py-0 md:px-2 md:py-1 lg:px-4 lg:py-2 bg-#6F2232 text-sm text-gray-200 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500" id="options-menu" aria-haspopup="true" aria-expanded="true""> Filter By Styles</button>
+        <div x-data="{ showPartyStyles: false }" class="relative">
+            <button @click="showPartyStyles = true" class="inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-1 py-0 md:px-2 md:py-1 lg:px-4 lg:py-2 bg-#6F2232 text-sm text-gray-200 hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500" id="options-menu" aria-haspopup="true" aria-expanded="true""> Filter By Styles</button>
             <ol class=" origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-10" id=" dropdownPartyStyles" x-show="showPartyStyles" @click.away="showPartyStyles = false">
                 @foreach($partyStyles as $partyStyle)
                 <li class="text-center">{{$partyStyle}}</li>
