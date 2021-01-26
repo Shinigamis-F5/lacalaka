@@ -48,4 +48,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function partiesVenue()
+    {
+        return $this->hasMany(Party::class);
+    }
+
+    public function partiesUser()
+    {
+        return $this->belongsToMany(Party::class);
+    }
 }
+ 

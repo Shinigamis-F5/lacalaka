@@ -21,8 +21,10 @@ class CreatePartiesTable extends Migration
             $table->time('time');
             $table->string('location');
             $table->string('style');
+            $table->unsignedBigInteger('user_id')->default(0);
             $table->id();
             $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

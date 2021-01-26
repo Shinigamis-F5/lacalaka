@@ -29,7 +29,7 @@ class PartyFactory extends Factory
             'time'=>$this->faker->time,
             'location'=>$this->faker->address,
             'style'=>$this->faker->name,
-            
+            'user_id'=>$this->faker->numberBetween(1, 10),
             
         ];
     }
