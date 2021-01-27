@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\User;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PartyController;
 
@@ -22,13 +24,13 @@ Route::get('/', function () {
 })->name('home');
 
 
+Route::resource('user', UserController::class)->middleware('auth');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/venue-profile', function () {
-    return view('dashboard-venue-profile');
-})->middleware(['auth'])->name('venue.profile');
+Route::get('/profile/{user}', [UserController::class, 'showInDetailFront'])->name('user.profile');
 
 Route::get('/party/{party}', [App\Http\Controllers\FrontController::class, 'show'])->name('party.details');
 

@@ -1,0 +1,72 @@
+.container {
+    width: 80%;
+    margin: 0px auto;
+    padding: 20px;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 1%, rgba(111, 34, 50,0.8));
+}
+
+.venue_name_section {
+    padding: 15px;
+    background-color: #ca2657;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Salsa';
+    font-size: 3vw;
+}
+
+.venue_img_section {
+    width: 100%;
+    max-height: 350px;
+    text-align: center;
+}
+
+.venue_img_section img {
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+.data {
+    width: 100%;
+    display: inline-flex;
+    margin-top: 50px;
+}
+
+.address {
+    width: 50%;
+    margin-right: 15px;
+}
+
+.address i {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.opening_time {
+    margin-left: 15px;
+}
+
+.opening_time i {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.hype {
+    margin-top: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.rating {
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.rating i {
+    margin: 5px;
+}

@@ -24,7 +24,11 @@ class RegistrationTest extends TestCase
             'email' => 'test@example.com',
             'password' => 'password',
             'password_confirmation' => 'password',
+<<<<<<< HEAD:tests/Feature/RegistrationTest.php
             'role' => 'venue'
+=======
+            'role' => 'venue',
+>>>>>>> feature/giacomo-visitor-venue-detail-page:tests/Feature/DefaultTest/RegistrationTest.php
         ]);
 
         $this->assertAuthenticated();
