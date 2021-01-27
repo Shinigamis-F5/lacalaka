@@ -4,8 +4,6 @@
             
             <livewire:homepage-party-list/>
         
-            <livewire:party-card-homepage/>
-
         </div>
      @endsection   
         
