@@ -9,17 +9,26 @@ class HomepagePartyList extends Component
 {
     public $partyList;
     public $displaySize;
- 
-    public function mount() {
 
+    protected $listeners = ['filterByStyle' => 'filterByStyle'];
+
+    public function mount() {
         $this->partyList = Party::all();
+
     }
 
     public function render()
     {   
+        
         $partyList = $this->partyList;
         return view('livewire.homepage-party-list', ['partyList'=>$partyList]); 
     }
+
+    public function filterByStyle($partyStyle)
+    {
+        $this->partyList = Party::where('style', $partyStyle)->get();
+    }
+
 
     public function alternateSizes () {
         
