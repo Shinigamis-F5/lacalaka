@@ -8,6 +8,7 @@ use App\Models\Party;
 class HomepagePartyList extends Component
 {
     public $partyList;
+    public $displaySize;
  
     public function mount() {
 
@@ -20,7 +21,9 @@ class HomepagePartyList extends Component
         return view('livewire.homepage-party-list', ['partyList'=>$partyList]); 
     }
 
-    
+    public function alternateSizes () {
+        
+    }
 
     // public function mount() {
     //     $this->partyList = [
