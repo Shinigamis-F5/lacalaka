@@ -19,4 +19,26 @@
         </div>
     </div>
 
+    <div class="mt-4 text-center">
+        <span class="">Current RATING .... {{ $rate }}%</span>
+        <div class="mt-4">
+            @php
+                $count = 5;
+            @endphp
+
+            @if ($yellowCups > 0)
+                @for ($i = 0; $i < $yellowCups; $i++)
+                    <i class="fas fa-glass-martini fa-3x text-yellow-200"></i>
+                    @php
+                    $count-- 
+                    @endphp
+                @endfor    
+            @endif
+
+            @for ($i = 0; $i < $count; $i++)
+                <i class="fas fa-glass-martini fa-3x"></i>
+            @endfor
+        </div>
+    </div>
+
 </div>
