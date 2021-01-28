@@ -53,4 +53,15 @@ class User extends Authenticatable
     {
         return $this->hasMany(Vote::class);
     }
+
+    public function partiesVenue()
+    {
+        return $this->hasMany(Party::class);
+    }
+
+    public function partiesUser()
+    {
+        return $this->belongsToMany(Party::class);
+    }
 }
+ 

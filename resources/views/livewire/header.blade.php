@@ -12,7 +12,7 @@
         
     </div>
 </div>
-    <nav class="flex">
+    <nav class="flex justify-between">
 
         @if (Route::has('login'))
         <div class="sm:block">
