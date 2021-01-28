@@ -22,6 +22,7 @@ class CreatePartiesTable extends Migration
             $table->time('time');
             $table->string('location');
             $table->string('style');
+            $table->boolean('is_active')->default(1);
             $table->timestamps();
             $table->unsignedBigInteger('user_id')->default(0);
             

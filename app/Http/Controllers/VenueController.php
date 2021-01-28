@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Party;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use Illuminate\Support\Carbon;
 
 class VenueController extends Controller
 {
@@ -15,7 +17,10 @@ class VenueController extends Controller
      */
     public function index()
     {
-        return view('dashboard-venue.dashboard');
+        $venue = User::find(auth()->user()->id);
+        $parties = $venue->partiesVenue()->get();
+
+        return view('dashboard-venue.dashboard', ['parties' => $parties]);
     }
 
     /**
@@ -84,6 +89,7 @@ class VenueController extends Controller
      */
     public function destroy($id)
     {
-        //
+
     }
+
 };

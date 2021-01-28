@@ -36,9 +36,15 @@ class VenueProfile extends Component
             $totalAmount += $vote->vote;
         }
 
-        $result = $totalAmount / $votesQuantity;
-        $percentatge = ($result * 100) / $numbOfcup;
-        $this->rate = number_format($percentatge, 0);
+        if($votesQuantity == 0) {
+            $this->rate = 0;
+        }
+
+        if($votesQuantity > 0) {
+            $result = $totalAmount / $votesQuantity;
+            $percentatge = ($result * 100) / $numbOfcup;
+            $this->rate = number_format($percentatge, 0);
+        }
     }
 
     public function assignYellowCups()
