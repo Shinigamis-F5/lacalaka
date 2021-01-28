@@ -3,7 +3,7 @@
 
  
    
-    <a href="#" class="block rounded-lg relative p-2 transform transition-all duration-300 scale-100 hover:scale-95" style="background: url({{$party->cover}}) center; background-size: cover">
+    <a href="#" class="block rounded-lg relative p-2 transform transition-all duration-300 scale-100 hover:scale-95 bg-opacity-80 color-black" style="background:linear-gradient(rgba(38, 34, 39, 0.5), rgba(38, 34, 39, 0.5)), url({{$party->cover}}) center; background-size: cover">
         
         <div class="absolute top-0 right-0 -mt-3 mr-3">
             <div class="rounded-full bg-indigo-500 text-white text-xs py-1 pl-2 pr-3 leading-none"><i class="mdi mdi-fire text-base align-middle"></i> <span class="align-middle">FRESH</span></div>

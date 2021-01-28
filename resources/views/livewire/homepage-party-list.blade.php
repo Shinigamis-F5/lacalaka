@@ -69,40 +69,18 @@
                 
             </div>
             <div class="bg-gray-800 absolute bottom-0 w-full border-t border-gray-200 flex">
-                <a href="#" class="flex flex-grow items-center justify-center p-2 text-indigo-500 hover:text-indigo-500">
-                    <div class="text-center">
-                        <span class="block h-8 text-3xl leading-8">
-                            <i class="mdi mdi-sunglasses"></i>
-                        </span>
-                        <span class="block text-xs leading-none">Today</span>
-                    </div>
-                </a>
-                <a href="#" class="flex flex-grow items-center justify-center p-2 text-gray-500 hover:text-indigo-500">
+                
+                <button wire:click="loadMore()" class="flex flex-grow items-center justify-center p-2 text-gray-500 hover:text-indigo-500">
                     <div class="text-center">
                         <span class="block h-8 text-3xl leading-8">
                             
                             <i class="mdi mdi-arrow-down-bold-circle"></i>
 
                         </span>
-                        <span class="block text-xs leading-none">Categories</span>
+                        <span class="block text-xl leading-none">LOAD MORE</span>
                     </div>
-                </a>
-                <a href="#" class="flex flex-grow items-center justify-center p-2 text-gray-500 hover:text-indigo-500">
-                    <div class="text-center">
-                        <span class="block h-8 text-3xl leading-8">
-                            <i class="mdi mdi-star-outline"></i>
-                        </span>
-                        <span class="block text-xs leading-none">Favorites</span>
-                    </div>
-                </a>
-                <a href="#" class="flex flex-grow items-center justify-center p-2 text-gray-500 hover:text-indigo-500">
-                    <div class="text-center">
-                        <span class="block h-8 text-3xl leading-8">
-                            <i class="mdi mdi-skull"></i>
-                        </span>
-                        <span class="block text-xs leading-none">Search</span>
-                    </div>
-                </a>
+                </button>
+                
             </div>
         </div>
     </div>

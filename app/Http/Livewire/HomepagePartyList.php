@@ -8,36 +8,35 @@ use Livewire\WithPagination;
 
 class HomepagePartyList extends Component
 {
-    // public $partyList;
+    
     use WithPagination;
 
-    protected $listeners = ['filterByStyle' => 'filterByStyle'];
+    protected $listeners = ['filterByStyle' => 'filterByStyle', 'loadMore' => 'loadMore'];
     private $filter;
+    public $perPage = 4;
 
     public function mount() {
-        $this->filter = Party::paginate(2);
+        $this->filter = Party::paginate($this->perPage);
+        //$this->filter = Party::paginate(4);   
     }
     
     public function render()
-    {   
-        // $this->partyList = Party::all();
-        
-        $partyList = Party::paginate(4);
-        
+    {     
         return view('livewire.homepage-party-list', ['partyList' => $this->filter]); 
     }
 
     public function filterByStyle($partyStyle)
     {
-        $this->filter = Party::where('style', $partyStyle)->paginate(2);
+        $this->filter = Party::where('style', $partyStyle)->paginate($this->perPage);
     }
 
+    // public function loadMore () {
+    //     $this->perPage = $this->perPage + 4;
+        
+    // }
     
 
-    public function alternateSizes () {
-        
-    }
-
+    
     
 
 }
