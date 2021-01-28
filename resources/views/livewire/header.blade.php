@@ -17,7 +17,11 @@
         @if (Route::has('login'))
         <div class="sm:block">
             @auth
+            @if (auth()->user()->role == "venue")
+            <a href="{{ url('/venue') }}" class="text-base text-gray-200 underline"><i class="mdi mdi-skull"></i>Dashboard</a>
+            @else
             <a href="{{ url('/dashboard') }}" class="text-base text-gray-200 underline"><i class="mdi mdi-skull"></i>Dashboard</a>
+            @endif
             @else
             <div class="flex-row">
             <a href="{{ route('login') }}" class="text-base text-gray-200"><i class="mdi mdi-skull"></i>
