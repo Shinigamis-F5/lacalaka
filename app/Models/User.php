@@ -27,7 +27,7 @@ class User extends Authenticatable
         'organization',
         'city',
         'description',
-       // 'phone'
+        // 'phone'
     ];
 
     /**
@@ -49,11 +49,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-<<<<<<< HEAD
     public function votes()
     {
         return $this->hasMany(Vote::class);
-=======
+    }
     public function partiesVenue()
     {
         return $this->hasMany(Party::class);
@@ -62,7 +61,5 @@ class User extends Authenticatable
     public function partiesUser()
     {
         return $this->belongsToMany(Party::class);
->>>>>>> landingFinale
     }
 }
- 
