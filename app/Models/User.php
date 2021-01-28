@@ -49,8 +49,20 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+<<<<<<< HEAD
     public function votes()
     {
         return $this->hasMany(Vote::class);
+=======
+    public function partiesVenue()
+    {
+        return $this->hasMany(Party::class);
+    }
+
+    public function partiesUser()
+    {
+        return $this->belongsToMany(Party::class);
+>>>>>>> landingFinale
     }
 }
+ 

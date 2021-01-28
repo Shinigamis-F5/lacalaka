@@ -8,9 +8,10 @@
         <div class="flex w-full items-center text-sm text-gray-300 font-medium">
             <div class="flex-1 flex items-center">
                 <div class="rounded-full w-8 h-8 mr-3" style="background: url(https://randomuser.me/api/portraits/women/74.jpg) center; background-size: cover;"></div>
-                <div></div>
             </div>
             <div><i class="mdi mdi-thumb-up"></i> 18</div>
+            {{-- <div class="absolute inset-0 bg-black opacity-500 h-full flex flex-col"> --}}
         </div>
     </a>
+
 </div>

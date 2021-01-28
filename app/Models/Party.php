@@ -19,6 +19,17 @@ class Party extends Model
         'time',
         'location',
         'style',
+        'user_id',
         
     ];
+
+    public function venue()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
 }
