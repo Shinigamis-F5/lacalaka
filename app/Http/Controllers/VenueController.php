@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
-class UserController extends Controller
+class VenueController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        return view('dashboard-venue.dashboard');
     }
 
     /**
@@ -45,9 +45,12 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show(User $venue)
     {
-        //
+        $venue = Auth::user();
+        return view('dashboard-venue.profile', [
+            'user' => $venue,
+        ]);
     }
 
     /**
@@ -83,6 +86,4 @@ class UserController extends Controller
     {
         //
     }
-
-    
-}
+};

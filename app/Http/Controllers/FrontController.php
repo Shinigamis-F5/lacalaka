@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Party;
+use App\Models\User;
 
 class FrontController extends Controller
 {
@@ -16,5 +17,13 @@ class FrontController extends Controller
     {
         
         return view('party-details', ['party' => $party]);
+    }
+
+    public function showInDetailFront($id)
+    {
+        $user = User::find($id);
+        return view('venue-detail-page', [
+            'user' => $user,
+        ]);
     }
 }
