@@ -8,10 +8,12 @@
                     <p class="text-sm text-gray-300 uppercase font-bold">THIS WEEK</p>
                 </div>
                 <div class="grid grid-cols-2 -mx-0.5 overflow-hidden">
+                
 
                     @foreach($partyList as $party)
+
                        
-                       
+                      
                        @livewire('party-card-homepage', ['party' => $party], key($party->id))
                        
                 

@@ -4,59 +4,40 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\Party;
+use Livewire\WithPagination;
 
 class HomepagePartyList extends Component
 {
-    public $partyList;
-    public $displaySize;
+    // public $partyList;
+    use WithPagination;
 
     protected $listeners = ['filterByStyle' => 'filterByStyle'];
+    private $filter;
 
     public function mount() {
-        $this->partyList = Party::all();
-
+        $this->filter = Party::paginate(2);
     }
-
+    
     public function render()
     {   
+        // $this->partyList = Party::all();
         
-        $partyList = $this->partyList;
-        return view('livewire.homepage-party-list', ['partyList'=>$partyList]); 
+        $partyList = Party::paginate(4);
+        
+        return view('livewire.homepage-party-list', ['partyList' => $this->filter]); 
     }
 
     public function filterByStyle($partyStyle)
     {
-        $this->partyList = Party::where('style', $partyStyle)->get();
+        $this->filter = Party::where('style', $partyStyle)->paginate(2);
     }
 
+    
 
     public function alternateSizes () {
         
     }
 
-    // public function mount() {
-    //     $this->partyList = [
-    //         [
-    //         "id" => 1,
-    //         "title" => "Que no cumbia el panico",
-    //         "img" => "https://picsum.photos/200/300",
-    //         ],
-    //         [    
-    //         "id" => 2,
-    //         "title" => "Que no cumbia el panico",
-    //         "img" => "https://picsum.photos/200/300",
-    //         ],
-    //         [   
-    //         "id" => 3,
-    //         "title" => "Que no cumbia el panico",
-    //         "img" => "https://picsum.photos/200/300",
-    //         ],
-    //         [   
-    //         "id" => 4,
-    //         "title" => "Que no cumbia el panico",
-    //         "img" => "https://picsum.photos/200/300",
-    //         ],   
-    //     ];
-    //}
+    
 
 }
