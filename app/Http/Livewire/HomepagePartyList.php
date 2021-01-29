@@ -13,7 +13,9 @@ class HomepagePartyList extends Component
 
     protected $listeners = ['filterByStyle' => 'filterByStyle', 'loadMore' => 'loadMore'];
     private $filter;
-    public $perPage = 4;
+    public $perPage = 2;
+    // public $isFiltered = false;
+    // private $style;
 
     public function mount() {
         $this->filter = Party::paginate($this->perPage);
@@ -28,15 +30,18 @@ class HomepagePartyList extends Component
     public function filterByStyle($partyStyle)
     {
         $this->filter = Party::where('style', $partyStyle)->paginate($this->perPage);
+        $this->style = $partyStyle;
+        $this->isFiltered = true;
     }
 
-    // public function loadMore () {
-    //     $this->perPage = $this->perPage + 4;
+    public function loadMore () {
+        $this->perPage = $this->perPage + 2;
+        // if($this->isFiltered){
+        //     $this->filterByStyle($this->style);
+        // }
+        $this->mount();
         
-    // }
-    
-
-    
+    }
     
 
 }
