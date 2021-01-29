@@ -28,6 +28,7 @@ Route::get('/', function () {
 
 Route::resource('user', UserController::class)->middleware('auth');
 Route::resource('venue', VenueController::class)->middleware('auth');
+// Route::resource('party', PartyController::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
