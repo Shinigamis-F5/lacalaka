@@ -11,12 +11,22 @@
         <div class="max-w-md md:mx-auto">
             <section>
                 <p class="text-sm leading-7 mt-5 text-gray-50">{{$party->description}}</p>
-                <div class="flex pt-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="34" viewBox="0 0 24 24" stroke="#f41f7b">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                    <p class="text-white text-lg md:text-xl pl-3">{{$party->location}}</p>
+                <div class="flex justify-between pt-1">
+                    <div class="flex">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="34" viewBox="0 0 24 24" stroke="#f41f7b">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        <p class="text-white text-lg md:text-xl pl-3">{{$party->location}}</p>
+
+                    </div>
+                    <div class="flex">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="34" viewBox="0 0 24 24" stroke="#f41f7b">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                        </svg>
+                        <p class="text-white text-lg md:text-xl pl-3">{{$venue->name}}</p>
+
+                    </div>
                 </div>
             </section>
             <section class="flex justify-between md:justify-evenly pt-5 mb-4">
@@ -39,7 +49,7 @@
                     @livewire('party-followers', ['id' => $party->id])
                 </div>
             </section>
-            
+
 
         </div>
     </div>

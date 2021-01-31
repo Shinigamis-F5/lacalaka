@@ -11,8 +11,10 @@ class VisitorPartyDetails extends Component
     public $party;
     public function render()
     {
-        return view('livewire.visitor-party-details', ['party' => $this->party]);
+        $venue = User::find($this->party->user_id);
+    
+        return view('livewire.visitor-party-details', ['party' => $this->party, 'venue' => $venue]);
     }
 
-   
+
 }
