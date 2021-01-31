@@ -13,7 +13,9 @@ class HomepagePartyList extends Component
 
     protected $listeners = ['filterByStyle' => 'filterByStyle', 'loadMore' => 'loadMore'];
     private $filter;
-    public $perPage = 4;
+    public $perPage = 2;
+    public $isFiltered = false;
+    public $style;
 
     public function mount() {
         $this->filter = Party::paginate($this->perPage);
@@ -22,21 +24,32 @@ class HomepagePartyList extends Component
     
     public function render()
     {     
-        return view('livewire.homepage-party-list', ['partyList' => $this->filter]); 
+        
+        return view('livewire.homepage-party-list', ['partyList' => $this->filter, 'style' => $this->style]); 
     }
-
+    
     public function filterByStyle($partyStyle)
     {
         $this->filter = Party::where('style', $partyStyle)->paginate($this->perPage);
+        $this->style = $partyStyle;
+        $this->isFiltered = true;
+
+    }
+    
+    public function loadMore () {
+        $this->perPage = $this->perPage + 2;
+        $this->mount();
+        
     }
 
-    // public function loadMore () {
-    //     $this->perPage = $this->perPage + 4;
-        
-    // }
-    
+    public function loadMoreFiltered () {
+        $style = $this->style;
+        $this->perPage = $this->perPage + 2;
 
-    
+        $this->filterByStyle($style) ;
+        
+    }
+
     
 
 }
