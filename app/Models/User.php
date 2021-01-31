@@ -63,4 +63,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Party::class);
     }
+
+    public function followParty($party)
+    {
+        return $this->partiesUser()->save($party);
+    }
 }

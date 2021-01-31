@@ -36,14 +36,10 @@
 
             <section class="md:flex items-center justify-between mb-5">
                 <div class="w-full">
-                    @livewire('party-followers')
+                    @livewire('party-followers', ['id' => $party->id])
                 </div>
             </section>
-            <div class="flex items-center xl:mt-0 mt-4 mb-5">
-                <button class="bg-pink-500 text-l md:text-2xl text-white ml-3 px-4 py-2 rounded items-center">
-                    Follow
-                </button>
-            </div>
+            
 
         </div>
     </div>
