@@ -2,9 +2,14 @@
 
 namespace Tests\Feature\Venue;
 
+use App\Http\Livewire\PartiesListVenue\VenueDash;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Http\UploadedFile;
 use Tests\TestCase;
+
+use Illuminate\Support\Facades\Storage;
+use Livewire\Livewire;
 
 class VenueTest extends TestCase
 {
@@ -16,8 +21,14 @@ class VenueTest extends TestCase
      */
     public function test_venue_can_upload_img_of_new_party()
     {
-        $response = $this->get('/');
+        Storage::fake('party-fotos');
 
-        $response->assertStatus(200);
+        $file = UploadedFile::fake()->image('party.png');
+
+        Livewire::test(VenueDash::class)
+                ->set('photo', $file)
+                ->call('upload', 'uploaded-party.png');
+
+        Storage::disk('party-fotos')->assertExists($file);
     }
 }

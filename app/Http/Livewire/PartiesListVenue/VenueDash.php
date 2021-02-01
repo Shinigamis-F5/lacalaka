@@ -6,9 +6,12 @@ use Livewire\Component;
 use App\Models\User;
 use App\Models\Party;
 use Illuminate\Support\Carbon;
+use Livewire\WithFileUploads;
 
 class VenueDash extends Component
 {
+    use WithFileUploads;
+
     public $title, $cover, $description, $date, $time, $location, $style;
     public $isActive = true;
 
@@ -28,7 +31,7 @@ class VenueDash extends Component
     {
         $this->validate([
             'title' => ['required', 'string'],
-            'cover' => ['required'],
+            'cover' => ['required', 'image', 'max:1024'],
             'description' => ['required', 'string'],
             'date' => ['required', 'date'],
             'time' => ['required'],
@@ -38,7 +41,7 @@ class VenueDash extends Component
 
         Party::create([
             'title' => $this->title,
-            'cover' => $this->cover,
+            'cover' => $this->cover->getClientOriginalName(),
             'description' => $this->description,
             'date' => $this->date,
             'time' => $this->time,
@@ -47,12 +50,14 @@ class VenueDash extends Component
             'is_active' => '1',
             'user_id' => auth()->user()->id,
         ]);
-
+        
+        $this->cover->storeAs('public/photos-parties', $this->cover->getClientOriginalName());
         $this->reset();
     }
 
     public function update(Party $party)
     {
+        
         $party->is_active = $this->isActive;
 
         $party->save();
@@ -88,4 +93,6 @@ class VenueDash extends Component
         $formatedDate = $date->format('d - F - Y');
         $party->date = $formatedDate;
     }
+
+    
 }

@@ -6,7 +6,7 @@
 
 
         <div class="w-full h-48 md:h-56 b-clip-content">
-            <img src="{{$party->cover}}" class="w-full h-full object-cover" />
+            <img src="/images/{{ $party->cover }}" class="w-full h-full object-cover" />
         </div>
         <div class="max-w-md md:mx-auto">
             <section>

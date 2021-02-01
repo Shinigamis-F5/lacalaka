@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class Party extends Model
 {
@@ -22,6 +23,11 @@ class Party extends Model
         'user_id',
         
     ];
+
+    public function getCoverUrl()
+    {
+        return Storage::url($this->cover);
+    }
 
     public function venue()
     {
