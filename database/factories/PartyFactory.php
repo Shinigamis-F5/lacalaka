@@ -28,7 +28,7 @@ class PartyFactory extends Factory
             'date'=>$this->faker->date,
             'time'=>$this->faker->time,
             'location'=>$this->faker->city,
-            'style'=>$this->faker->name,
+            'style_id'=>$this->faker->numberBetween(1, 2),
             'is_active' =>$this->faker->boolean(true),
             'user_id'=>$this->faker->numberBetween(1, 10),
         ];

@@ -18,7 +18,7 @@ class Party extends Model
         'date',
         'time',
         'location',
-        'style',
+        'style_id',
         'user_id',
         
     ];
@@ -31,5 +31,10 @@ class Party extends Model
     public function users()
     {
         return $this->belongsToMany(User::class);
+    }
+
+    public function style() 
+    {
+        return $this->belongsTo(Style::class);
     }
 }
