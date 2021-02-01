@@ -43,7 +43,7 @@
                 @foreach($partyStyles as $partyStyle)
                 <li class="text-center">
                 <button wire:click="filterByStyle('{{$partyStyle}}')">
-                {{$partyStyle}}
+                {{$partyStyle->style}}
                 </button>
                 </li>
                 @endforeach

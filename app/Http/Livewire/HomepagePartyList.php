@@ -11,6 +11,7 @@ class HomepagePartyList extends Component
     
     use WithPagination;
 
+    
     protected $listeners = ['filterByStyle' => 'filterByStyle', 'loadMore' => 'loadMore'];
     private $filter;
     public $perPage = 2;
@@ -24,14 +25,16 @@ class HomepagePartyList extends Component
     
     public function render()
     {     
-        
         return view('livewire.homepage-party-list', ['partyList' => $this->filter, 'style' => $this->style]); 
     }
     
     public function filterByStyle($partyStyle)
     {
-        $this->filter = Party::where('style', $partyStyle)->paginate($this->perPage);
-        $this->style = $partyStyle;
+        $partyStyle = json_decode($partyStyle);
+        $styleId = $partyStyle->id;
+        //  $findStyle = Style::find()
+        $this->filter = Party::where('style_id', $styleId)->paginate($this->perPage);
+        $this->style = $partyStyle->style;
         $this->isFiltered = true;
 
     }
