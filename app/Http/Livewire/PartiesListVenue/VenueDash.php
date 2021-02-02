@@ -5,23 +5,25 @@ namespace App\Http\Livewire\PartiesListVenue;
 use Livewire\Component;
 use App\Models\User;
 use App\Models\Party;
+use App\Models\Style;
 use Illuminate\Support\Carbon;
 
 class VenueDash extends Component
 {
     public $title, $cover, $description, $date, $time, $location, $style;
     public $isActive = true;
-
+   
     public function render()
     {
         $venue = User::find(auth()->user()->id);
         $parties = $venue->partiesVenue()->get();
+        $partyStyles = Style::all();
 
         foreach ($parties as $party) {
             $this->FormatPartyDate($party);
         }
 
-        return view('livewire.parties-list-venue.venue-dash', ['parties' => $parties]);
+        return view('livewire.parties-list-venue.venue-dash', ['parties' => $parties, 'partyStyles' => $partyStyles]);
     }
 
     public function store()

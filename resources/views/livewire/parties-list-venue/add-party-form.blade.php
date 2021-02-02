@@ -44,9 +44,11 @@
                 <label for="style" class="block text-sm font-medium text-gray-700">Style</label>
                 <select id="style" wire:model="style" name="style"class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
                   <option>Select an option</option>
-                  <option value="Rock">Rock</option>
-                  <option value="Salsa">Salsa</option>
-                  <option value="Ballet">Ballet</option>
+
+                  @foreach($partyStyles as $partyStyle)
+                  
+                    <option value="{{ $partyStyle->style }}">{{ $partyStyle->style }}</option>
+                  @endforeach
                 </select>
               </div>
 

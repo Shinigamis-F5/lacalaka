@@ -16,7 +16,7 @@ class HomepagePartyList extends Component
     private $filter;
     public $perPage = 2;
     public $isFiltered = false;
-    public $style;
+    protected $style;
 
     public function mount() {
         $this->filter = Party::paginate($this->perPage);
@@ -29,14 +29,14 @@ class HomepagePartyList extends Component
     }
     
     public function filterByStyle($partyStyle)
-    {
+    {   
         $partyStyle = json_decode($partyStyle);
         $styleId = $partyStyle->id;
         //  $findStyle = Style::find()
         $this->filter = Party::where('style_id', $styleId)->paginate($this->perPage);
-        $this->style = $partyStyle->style;
         $this->isFiltered = true;
-
+        $this->style = $partyStyle;
+        
     }
     
     public function loadMore () {
@@ -45,10 +45,11 @@ class HomepagePartyList extends Component
         
     }
 
-    public function loadMoreFiltered () {
-        $style = $this->style;
+    public function loadMoreFiltered ($style) {
+        $style = $style;
+       dd($style);
+        
         $this->perPage = $this->perPage + 2;
-
         $this->filterByStyle($style) ;
         
     }

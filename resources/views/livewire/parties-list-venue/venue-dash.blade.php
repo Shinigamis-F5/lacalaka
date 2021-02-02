@@ -6,7 +6,7 @@
             <div class="overflow-hidden shadow-md text-gray-100">
         
                 <div class="p-6 bg-gray-800 border-b border-gray-600">
-                    Currently you don't have parties. When you are ready use the form to add parties.
+                    Currently you don't have parties. When you are ready, use the form to add parties.
                 </div>
         
             </div>
@@ -28,11 +28,11 @@
                                 <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Name</span>
                                 {{ $party->title }}
                             </td>
-                            <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
+                            <td class="w-full lg:w-auto p-3 text-gray-800 border border-b text-center block lg:table-cell relative lg:static">
                                 <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Date</span>
                                 {{ $party->date }}
                             </td>
-                            <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
+                            <td class="w-full lg:w-auto p-3 text-gray-800 border border-b text-center block lg:table-cell relative lg:static">
                                 <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Status</span>
                                     @if ($party->is_active == true)
                                     <span class="rounded bg-yellow-400 py-1 px-3 text-xs font-bold">active</span>
@@ -40,7 +40,7 @@
                                     <span class="rounded bg-red-400 py-1 px-3 text-xs font-bold">canceled</span>
                                     @endif
                             </td>
-                            <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
+                            <td class="w-full lg:w-auto p-3 text-gray-800 border border-b text-center block lg:table-cell relative lg:static">
                                 <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Actions</span>
                                 <a href="#" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Edit</a>
 
