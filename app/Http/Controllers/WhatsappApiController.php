@@ -8,17 +8,17 @@ use Illuminate\Http\Request;
 
 class WhatsappApiController extends Controller
 {
-    public function sendMsg()
+    public static function sendMsg()
     {
-        $number = "34632517023";
+        $number = 34611086304;
         $apiKey = env('NEXMO_API_KEY');
         $apiSecret = env('NEXMO_API_SECRET');
         $apiNumber = env('NEXMO_NUMBER');
-        $msg = "hey";
+        $msg = "how u doinaaaaaaaaaaaaaaaaa mate";
 
         $params = [
-            "to" => ["type" => "whatsapp", "number" => $number],
-            "from" => ["type" => "whatsapp", "number" => ""],
+            "to" => ["type" => "whatsapp", "number" => "$number"],
+            "from" => ["type" => "whatsapp", "number" => "$apiNumber"],
             "message" => [
                 "content" => [
                     "type" => "text",
