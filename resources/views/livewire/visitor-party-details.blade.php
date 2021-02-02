@@ -5,8 +5,9 @@
         </div>
 
 
-        <div class="w-full h-48 md:h-56 b-clip-content">
+        <div class="w-full h-48 md:h-56 b-clip-content relative">
             <img src="{{$party->cover}}" class="w-full h-full object-cover" />
+            <h2 class="bg-black absolute text-white -inset-y-1/2">Party Cancelled</h2>
         </div>
         <div class="max-w-md md:mx-auto">
             <section>
