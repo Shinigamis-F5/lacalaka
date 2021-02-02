@@ -4,13 +4,19 @@ namespace App\Http\Livewire;
 
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class VenueProfile extends Component
 {
+    use WithFileUploads;
+
     public $rate;
     public $totalCups = 5;
     public $yellowCups;
+
+    public $organization, $address, $city, $description, $phone, $openingTimes, $img;
 
     public function render()
     {
@@ -22,6 +28,44 @@ class VenueProfile extends Component
         return view('livewire.venue-profile', [
             'venue' => $venue,
         ]);
+    }
+
+    public function edit(User $user)
+    {
+        $this->organization = $user->organization;
+        $this->address = $user->address;
+        $this->city = $user->city;
+        $this->description = $user->description;
+        $this->phone = $user->phone;
+        $this->openingTimes = $user->openingTimes;
+    }
+
+    public function upload(User $user)
+    {
+        $user->update([
+            'organization' => $this->organization,
+            'address' => $this->address,
+            'city' => $this->city,
+            'description' => $this->description,
+            'phone' => $this->phone,
+            'openingTimes' => $this->openingTimes,
+        ]);
+
+        $user->saveOrFail();
+    }
+
+    public function storeImg(User $user)
+    {
+        $this->validate([
+            'img' => ['required', 'image', 'max:1024'],
+        ]);
+        
+        $user->update([
+            'img' => $this->img->getClientOriginalName(),
+        ]);
+
+        $this->img->storeAs('public/venue-image', $this->img->getClientOriginalName());
+        
     }
 
 

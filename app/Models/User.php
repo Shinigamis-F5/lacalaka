@@ -27,7 +27,7 @@ class User extends Authenticatable
         'organization',
         'city',
         'description',
-        // 'phone'
+        'phone'
     ];
 
     /**
