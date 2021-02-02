@@ -31432,7 +31432,6 @@ select {
   width: 80%;
   margin: 0px auto;
   padding: 20px;
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 1%, rgba(111, 34, 50,0.8));
 }
 
 .venue_name_section {
@@ -31465,7 +31464,6 @@ select {
 .data {
   width: 100%;
   display: inline-flex;
-  margin-top: 50px;
 }
 
 .address {
@@ -31474,7 +31472,6 @@ select {
 }
 
 .address i {
-  display: block;
   margin-bottom: 10px;
 }
 
@@ -31483,7 +31480,6 @@ select {
 }
 
 .opening_time i {
-  display: block;
   margin-bottom: 10px;
 }
 
