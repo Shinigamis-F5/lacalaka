@@ -27,7 +27,7 @@ class PartyObserver
     public function updated(Party $party)
     {
         if ($party->is_active === false) {
-            WhatsappApiController::sendMsg();
+            WhatsappApiController::sendMsg($party);
         }
     }
 

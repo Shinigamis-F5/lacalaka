@@ -2,22 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use Dotenv\Dotenv;
-use Illuminate\Support\Env;
 use Illuminate\Http\Request;
+use App\Models\Party;
+use App\Models\User;
 
 class WhatsappApiController extends Controller
 {
-    public static function sendMsg()
+    public static function sendMsg(Party $party)
     {
-        $number = 34611086304;
         $apiKey = env('NEXMO_API_KEY');
         $apiSecret = env('NEXMO_API_SECRET');
         $apiNumber = env('NEXMO_NUMBER');
-        $msg = "how u doinaaaaaaaaaaaaaaaaa mate";
+
+        $partyVenue = User::find($party->user_id);
+        $number = $partyVenue->phone;
+        $msg = "You just cancelled a party ($party->title) that you announced on https://lacalaka.party/party/$party->id";
 
         $params = [
-            "to" => ["type" => "whatsapp", "number" => "$number"],
+            "to" => ["type" => "whatsapp", "number" => $number],
             "from" => ["type" => "whatsapp", "number" => "$apiNumber"],
             "message" => [
                 "content" => [
