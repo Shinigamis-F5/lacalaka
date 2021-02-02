@@ -7,12 +7,30 @@
                 </div>
                 <div class="grid grid-cols-2 -mx-0.5 overflow-hidden">
 
-                    @foreach($partyList as $party)
+                    @if (count($partyList) == 0)  
+                    <div class="mb-5 mr-3 mt-5">
+                        <a href="https://silencetimer.com/" class="block rounded-lg relative p-2 transform transition-all duration-300 scale-100 hover:scale-95 bg-opacity-2 bg-gray-800" style="background:linear-gradient(rgba(38, 34, 39, 0.5), rgba(38, 34, 39, 0.5)), url(/img/meditationParty.png) center; background-size: cover">
+                            <div class="absolute top-0 right-0 -mt-3 mr-3">
+                                <div class="rounded-full bg-indigo-500 text-white text-xs py-1 pl-2 pr-3 leading-none"><i class="mdi mdi-fire text-base align-middle"></i> <span class="align-middle">RELAXED</span></div>
+                            </div>
+                            <div class="h-48"></div>
+                            <h2 class="text-white text-2xl font-bold leading-tight mb-3 pr-0"><a href="https://silencetimer.com/" >parece que has encontrado...SILENCIO</a></h2>
+                            <div class="flex w-full items-center text-sm text-gray-300 font-medium">
+                                
+                            </div>
+                        </a>
+                    
+                    </div>    
+                    {{-- <div class="h-40">
+                            <h1 class="text-center size-40"><a href="https://silencetimer.com/" >parece que has encontrado...SILENCIO</a></h1>
+                        </div> --}}
+                    @else
 
-                    @livewire('party-card-homepage', ['party' => $party], key($party->id))
+                        @foreach($partyList as $party)
+                        @livewire('party-card-homepage', ['party' => $party], key($party->id))
+                        @endforeach
 
-                    @endforeach
-
+                    @endif
                 </div>
 
                 <div class="mb-3">
