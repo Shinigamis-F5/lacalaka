@@ -48,6 +48,9 @@ class RegisteredUserController extends Controller
 
         event(new Registered($user));
 
-        return redirect(RouteServiceProvider::HOME);
+        if ($request->role == 'venue') {
+            return redirect(RouteServiceProvider::VENUE);
+        } else
+            return redirect(RouteServiceProvider::HOME);
     }
 }

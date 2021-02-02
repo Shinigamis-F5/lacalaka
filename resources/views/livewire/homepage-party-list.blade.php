@@ -1,5 +1,3 @@
-
-    
     <div class="min-w-screen min-h-screen bg-gray-800 flex items-center justify-around px-5 py-5">
         <div class="bg-gray text-gray-400 rounded-xl shadow-lg overflow-hidden relative flex" style="width:100%;height:736px">
             <div class="bg-black h-full w-full px-5 pt-6 pb-20 overflow-y-auto">
@@ -10,15 +8,13 @@
                 <div class="grid grid-cols-2 -mx-0.5 overflow-hidden">
 
                     @foreach($partyList as $party)
-                       
-                       
-                       @livewire('party-card-homepage', ['party' => $party], key($party->id))
-                       
-                
+
+                    @livewire('party-card-homepage', ['party' => $party], key($party->id))
+
                     @endforeach
-                   
+
                 </div>
-                
+
                 <div class="mb-3">
                     <h1 class="text-3xl font-bold">THIS MONTH</h1>
                     <p class="text-sm text-gray-500 uppercase font-bold">THIS MONTH</p>
@@ -62,45 +58,23 @@
                     </a>
                 </div>
                 <hr class="border-gray-200 my-3">
-             
+
                 <hr class="border-gray-200 my-3">
-                
+
             </div>
-            <div class="bg-gray-800 absolute bottom-0 w-full border-t border-gray-200 flex">
-                <a href="#" class="flex flex-grow items-center justify-center p-2 text-indigo-500 hover:text-indigo-500">
+            <div x-data: class="bg-gray-800 absolute bottom-0 w-full border-t border-gray-200 flex">
+
+                <button @if($isFiltered===true) wire:click="loadMoreFiltered()" @else wire:click="loadMore()" @endif class="flex flex-grow items-center justify-center p-2 text-gray-500 hover:text-indigo-500">
                     <div class="text-center">
                         <span class="block h-8 text-3xl leading-8">
-                            <i class="mdi mdi-sunglasses"></i>
-                        </span>
-                        <span class="block text-xs leading-none">Today</span>
-                    </div>
-                </a>
-                <a href="#" class="flex flex-grow items-center justify-center p-2 text-gray-500 hover:text-indigo-500">
-                    <div class="text-center">
-                        <span class="block h-8 text-3xl leading-8">
-                            
+
                             <i class="mdi mdi-arrow-down-bold-circle"></i>
 
                         </span>
-                        <span class="block text-xs leading-none">Categories</span>
+                        <span class="block text-xl leading-none">LOAD MORE</span>
                     </div>
-                </a>
-                <a href="#" class="flex flex-grow items-center justify-center p-2 text-gray-500 hover:text-indigo-500">
-                    <div class="text-center">
-                        <span class="block h-8 text-3xl leading-8">
-                            <i class="mdi mdi-star-outline"></i>
-                        </span>
-                        <span class="block text-xs leading-none">Favorites</span>
-                    </div>
-                </a>
-                <a href="#" class="flex flex-grow items-center justify-center p-2 text-gray-500 hover:text-indigo-500">
-                    <div class="text-center">
-                        <span class="block h-8 text-3xl leading-8">
-                            <i class="mdi mdi-skull"></i>
-                        </span>
-                        <span class="block text-xs leading-none">Search</span>
-                    </div>
-                </a>
+                </button>
+
             </div>
         </div>
     </div>

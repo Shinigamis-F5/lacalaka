@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\Party;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
+use Illuminate\Support\Carbon;
 
-class UserController extends Controller
+class VenueController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +17,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $venue = User::find(auth()->user()->id);
+        $parties = $venue->partiesVenue()->get();
+
+        return view('dashboard-venue.dashboard', ['parties' => $parties]);
     }
 
     /**
@@ -45,9 +50,12 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show(User $venue)
     {
-        //
+        $venue = Auth::user();
+        return view('dashboard-venue.profile', [
+            'user' => $venue,
+        ]);
     }
 
     /**
@@ -81,8 +89,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+
     }
 
-    
-}
+};

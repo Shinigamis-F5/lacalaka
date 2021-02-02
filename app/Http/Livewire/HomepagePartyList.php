@@ -4,50 +4,52 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\Party;
+use Livewire\WithPagination;
 
 class HomepagePartyList extends Component
 {
-    public $partyList;
-    public $displaySize;
- 
+    
+    use WithPagination;
+
+    protected $listeners = ['filterByStyle' => 'filterByStyle', 'loadMore' => 'loadMore'];
+    private $filter;
+    public $perPage = 2;
+    public $isFiltered = false;
+    public $style;
+
     public function mount() {
-
-        $this->partyList = Party::all();
+        $this->filter = Party::paginate($this->perPage);
+        //$this->filter = Party::paginate(4);   
     }
-
+    
     public function render()
-    {   
-        $partyList = $this->partyList;
-        return view('livewire.homepage-party-list', ['partyList'=>$partyList]); 
+    {     
+        
+        return view('livewire.homepage-party-list', ['partyList' => $this->filter, 'style' => $this->style]); 
     }
+    
+    public function filterByStyle($partyStyle)
+    {
+        $this->filter = Party::where('style', $partyStyle)->paginate($this->perPage);
+        $this->style = $partyStyle;
+        $this->isFiltered = true;
 
-    public function alternateSizes () {
+    }
+    
+    public function loadMore () {
+        $this->perPage = $this->perPage + 2;
+        $this->mount();
         
     }
 
-    // public function mount() {
-    //     $this->partyList = [
-    //         [
-    //         "id" => 1,
-    //         "title" => "Que no cumbia el panico",
-    //         "img" => "https://picsum.photos/200/300",
-    //         ],
-    //         [    
-    //         "id" => 2,
-    //         "title" => "Que no cumbia el panico",
-    //         "img" => "https://picsum.photos/200/300",
-    //         ],
-    //         [   
-    //         "id" => 3,
-    //         "title" => "Que no cumbia el panico",
-    //         "img" => "https://picsum.photos/200/300",
-    //         ],
-    //         [   
-    //         "id" => 4,
-    //         "title" => "Que no cumbia el panico",
-    //         "img" => "https://picsum.photos/200/300",
-    //         ],   
-    //     ];
-    //}
+    public function loadMoreFiltered () {
+        $style = $this->style;
+        $this->perPage = $this->perPage + 2;
+
+        $this->filterByStyle($style) ;
+        
+    }
+
+    
 
 }

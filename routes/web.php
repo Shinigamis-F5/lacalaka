@@ -2,6 +2,8 @@
 
 use App\Models\User;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\VenueController;
+use App\Http\Controllers\FrontController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PartyController;
 
@@ -25,13 +27,14 @@ Route::get('/', function () {
 
 
 Route::resource('user', UserController::class)->middleware('auth');
+Route::resource('venue', VenueController::class)->middleware('auth');
+// Route::resource('party', PartyController::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/profile/{user}', [UserController::class, 'showInDetailFront'])->name('user.profile');
-
+Route::get('/profile/{user}', [FrontController::class, 'showInDetailFront'])->name('user.profile');
 Route::get('/party/{party}', [App\Http\Controllers\FrontController::class, 'show'])->name('party.details');
 
 require __DIR__ .'/auth.php';

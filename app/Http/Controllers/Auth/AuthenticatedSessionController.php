@@ -32,7 +32,12 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
+        if(Auth::user()->role == 'venue') {
+            return redirect(RouteServiceProvider::VENUE);
+        }
+
         return redirect(RouteServiceProvider::HOME);
+        
     }
 
     /**

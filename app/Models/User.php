@@ -27,7 +27,7 @@ class User extends Authenticatable
         'organization',
         'city',
         'description',
-       // 'phone'
+        // 'phone'
     ];
 
     /**
@@ -52,5 +52,20 @@ class User extends Authenticatable
     public function votes()
     {
         return $this->hasMany(Vote::class);
+    }
+    
+    public function partiesVenue()
+    {
+        return $this->hasMany(Party::class);
+    }
+
+    public function partiesUser()
+    {
+        return $this->belongsToMany(Party::class);
+    }
+
+    public function followParty($party)
+    {
+        return $this->partiesUser()->save($party);
     }
 }
