@@ -2,8 +2,8 @@
         <div class="bg-gray text-gray-400 rounded-xl shadow-lg overflow-hidden relative flex" style="width:100%;height:736px">
             <div class="bg-black h-full w-full px-5 pt-6 pb-20 overflow-y-auto">
                 <div class="mb-3">
-                    <h1 class="text-3xl font-bold">THIS WEEK</h1>
-                    <p class="text-sm text-gray-300 uppercase font-bold">THIS WEEK</p>
+                    <h1 class="text-3xl font-bold font-cursive">THIS WEEK</h1>
+                    <p class="text-sm text-gray-300 uppercase font-bold font-cursive">THIS WEEK</p>
                 </div>
                 <div class="grid grid-cols-2 -mx-0.5 overflow-hidden">
 
@@ -21,9 +21,6 @@
                         </a>
                     
                     </div>    
-                    {{-- <div class="h-40">
-                            <h1 class="text-center size-40"><a href="https://silencetimer.com/" >parece que has encontrado...SILENCIO</a></h1>
-                        </div> --}}
                     @else
 
                         @foreach($partyList as $party)
@@ -34,8 +31,8 @@
                 </div>
 
                 <div class="mb-3">
-                    <h1 class="text-3xl font-bold">THIS MONTH</h1>
-                    <p class="text-sm text-gray-500 uppercase font-bold">THIS MONTH</p>
+                    <h1 class="text-3xl font-bold font-cursive">THIS MONTH</h1>
+                    <p class="text-sm text-gray-500 uppercase font-bold font-cursive">THIS MONTH</p>
                 </div>
                 <div class="flex -mx-1 mb-5">
                     <div class="w-1/2 px-1">
