@@ -16,11 +16,10 @@ class HomepagePartyList extends Component
     private $filter;
     public $perPage = 2;
     public $isFiltered = false;
-    protected $style;
+    public $style;
 
     public function mount() {
-        $this->filter = Party::paginate($this->perPage);
-        //$this->filter = Party::paginate(4);   
+        $this->filter = Party::paginate($this->perPage);  
     }
     
     public function render()
@@ -30,12 +29,11 @@ class HomepagePartyList extends Component
     
     public function filterByStyle($partyStyle)
     {   
-        $partyStyle = json_decode($partyStyle);
-        $styleId = $partyStyle->id;
-        //  $findStyle = Style::find()
+        $styleClass = json_decode($partyStyle);
+        $styleId = $styleClass->id;
         $this->filter = Party::where('style_id', $styleId)->paginate($this->perPage);
-        $this->isFiltered = true;
         $this->style = $partyStyle;
+        $this->isFiltered = true;
         
     }
     
@@ -45,10 +43,8 @@ class HomepagePartyList extends Component
         
     }
 
-    public function loadMoreFiltered ($style) {
-        $style = $style;
-       dd($style);
-        
+    public function loadMoreFiltered () {
+        $style = $this->style;
         $this->perPage = $this->perPage + 2;
         $this->filterByStyle($style) ;
         
