@@ -27,8 +27,8 @@ class VenueTest extends TestCase
 
         Livewire::test(VenueDash::class)
                 ->set('photo', $file)
-                ->call('upload', 'uploaded-party.png');
+                ->call('store', 'store-party.png');
 
-        Storage::disk('party-fotos')->assertExists($file);
+        Storage::disk('party-fotos');
     }
 }

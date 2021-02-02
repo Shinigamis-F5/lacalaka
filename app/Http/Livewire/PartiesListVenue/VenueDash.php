@@ -5,6 +5,7 @@ namespace App\Http\Livewire\PartiesListVenue;
 use Livewire\Component;
 use App\Models\User;
 use App\Models\Party;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Carbon;
 use Livewire\WithFileUploads;
 
@@ -39,19 +40,27 @@ class VenueDash extends Component
             'style' => ['required'],
         ]);
 
-        Party::create([
-            'title' => $this->title,
-            'cover' => $this->cover->getClientOriginalName(),
-            'description' => $this->description,
-            'date' => $this->date,
-            'time' => $this->time,
-            'location' => $this->location,
-            'style' => $this->style,
-            'is_active' => '1',
-            'user_id' => auth()->user()->id,
-        ]);
+        DB::beginTransaction();
+
+        try {
+            Party::create([
+                'title' => $this->title,
+                'cover' => $this->cover->getClientOriginalName(),
+                'description' => $this->description,
+                'date' => $this->date,
+                'time' => $this->time,
+                'location' => $this->location,
+                'style' => $this->style,
+                'is_active' => '1',
+                'user_id' => auth()->user()->id,
+            ]);
+    
+            $this->cover->storeAs('public/photos-parties', $this->cover->getClientOriginalName());
+        }
+        catch (\Exception $error) {
+            DB::rollBack();
+        }
         
-        $this->cover->storeAs('public/photos-parties', $this->cover->getClientOriginalName());
         $this->reset();
     }
 
