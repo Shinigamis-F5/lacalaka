@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Party;
 use App\Models\User;
+use Illuminate\Support\Facades\Storage;
 
 class FrontController extends Controller
 {
@@ -15,7 +16,6 @@ class FrontController extends Controller
      */
     public function show(Party $party)
     {
-        
         return view('party-details', ['party' => $party]);
     }
 
