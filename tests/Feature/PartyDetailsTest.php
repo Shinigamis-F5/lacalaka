@@ -21,8 +21,10 @@ class PartyDetailsTest extends TestCase
      */
     public function test_user_can_see_party_details_page()
     {
-        $style = Style::create(['style' => "Rock", 'style_description' => "blablanla"]);
-        $party = Party::factory()->create([]);
+        $style = Style::create(['id' => 1, 'style' => 'Rock', 'style_description' => 'agagsgagg']);
+        $style = Style::create(['id' => 2, 'style' => 'Punk', 'style_description' => 'agagsgagg']);
+        $user = User::factory(10)->create();
+        $party = Party::factory()->create();
 
         $response = $this->get(route('party.details', $party->id));
         $response->assertStatus(200)
@@ -33,6 +35,9 @@ class PartyDetailsTest extends TestCase
 
     public function test_register_user_can_follow_party()
     {
+        $style = Style::create(['id' => 1, 'style' => 'Rock', 'style_description' => 'agagsgagg']);
+        $style = Style::create(['id' => 2, 'style' => 'Punk', 'style_description' => 'agagsgagg']);
+        $user = User::factory(10)->create();
         $party = Party::factory()->create();
         $this->actingAs(User::factory()->create());
         Livewire::test(PartyFollowers::class)
