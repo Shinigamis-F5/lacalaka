@@ -30,7 +30,7 @@
                     @endif
                 </div>
 
-                <div class="mb-3">
+                {{-- <div class="mb-3">
                     <h1 class="text-3xl font-bold font-cursive">THIS MONTH</h1>
                     <p class="text-sm text-gray-500 uppercase font-bold font-cursive">THIS MONTH</p>
                 </div>
@@ -71,10 +71,10 @@
                             </div>
                         </div>
                     </a>
-                </div>
-                <hr class="border-gray-200 my-3">
+                </div> --}}
+                {{-- <hr class="border-gray-200 my-3">
 
-                <hr class="border-gray-200 my-3">
+                <hr class="border-gray-200 my-3"> --}}
 
             </div>
             <div x-data: class="bg-gray-800 absolute bottom-0 w-full border-t border-gray-200 flex">
@@ -83,10 +83,10 @@
                     <div class="text-center">
                         <span class="block h-8 text-3xl leading-8">
 
-                            <i class="mdi mdi-arrow-down-bold-circle"></i>
+                            <i class="mdi mdi-guitar-pick"></i>
 
                         </span>
-                        <span class="block text-xl leading-none">LOAD MORE</span>
+                        <span class="block text-xl leading-none font-cursive">LOAD MORE</span>
                     </div>
                 </button>
 
