@@ -6,13 +6,13 @@
         <div class="flex justify-around items-center mb-5">
 
             <a href="{{route('home')}}">
-                <img src="/img/LaCalakaLogo2.png" class="w-20 h-20 mr-2">
+                <img src="/img/LaCalakaLogo2.png" class="w-20 h-20 mr-2 transform transition-all duration-300 scale-100 hover:scale-90">
             </a>
 
             <h1 id="fiestasTitle" class="uppercase tracking-wide font-bold font-cursive text-center text-4xl md:text-6xl lg:text-8xl text-gray-500 shadow-2xl mx-3 justify-self-center">La Calaka</h1>
 
             <a href="{{route('home')}}">
-                <img src="/img/LaCalakaLogo2.png" class="w-20 h-20 mr-2">
+                <img src="/img/LaCalakaLogo2.png" class="w-20 h-20 mr-2 transform transition-all duration-300 scale-100 hover:scale-90">
             </a>
            
         
