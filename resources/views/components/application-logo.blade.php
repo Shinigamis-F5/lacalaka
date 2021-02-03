@@ -1,5 +1,6 @@
 
 <div >
-<img src="https://images.vexels.com/media/users/3/184839/isolated/lists/075c413496f834ab41b55c283434f614-calavera-mexicana-calavera-plana.png" class="p-1 shadow rounded-full w-20 h-20">
-
+    <a href="{{route('home')}}">
+        <img src="/img/LaCalakaLogo2.png" class="w-10 h-10 mr-2 transform transition-all duration-300 scale-100 hover:scale-90">
+    </a>
 </div>
