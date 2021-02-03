@@ -17,12 +17,15 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
             </svg>
         </button>
+        <p class="ml-2 self-center text-pink-500">See who is going to the party</p>
     </div>
 
 
     <div class="flex items-center xl:mt-0 mt-4 mb-5">
-        <button wire:click="follow()" class="bg-pink-500 text-l md:text-2xl text-white ml-3 px-4 py-2 rounded items-center">
-            Follow
+        
+        <button @if($isFollowing ===true) wire:click="unFollow()" @else wire:click="follow()" wire:click="unFollow()" @endif class="bg-pink-500 text-l md:text-2xl text-white ml-3 px-4 py-2 rounded items-center">
+            {{$buttonTitle}}
         </button>
+       
     </div>
 </div>

@@ -66,6 +66,10 @@ class User extends Authenticatable
 
     public function followParty($party)
     {
-        return $this->partiesUser()->save($party);
+        return $this->partiesUser()->attach($party);
+    }
+    public function unfollowParty($party)
+    {
+        return $this->partiesUser()->detach($party);
     }
 }
