@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <div id="cab-dashboard">
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            <h2 class="font-semibold text-xl text-gray-200 leading-tight">
                 <a href="{{ route('dashboard') }}">{{ __('Dashboard') }}</a>
             </h2>
             <a href="{{ route('venue.show', auth()->user()) }}" class="bg-blue-200 rounded-md p-2 inline-flex items-center justify-center text-gray-800 hover:text-gray-500 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" >Profile</a>
