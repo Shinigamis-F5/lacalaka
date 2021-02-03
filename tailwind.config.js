@@ -10,7 +10,7 @@ module.exports = {
         extend: {
             fontFamily: {
                 sans: ["Nunito", ...defaultTheme.fontFamily.sans],
-                cursive: ["Salsa", "cursive"],
+                cursive: ["Righteous", "cursive"],
             },
             boxShadow: {
                 xl:

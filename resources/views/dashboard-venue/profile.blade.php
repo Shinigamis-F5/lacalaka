@@ -1,10 +1,10 @@
 <x-app-layout>
     <x-slot name="header">
         <div id="cab-dashboard">
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            <h2 class="font-semibold text-xl text-gray-300 leading-tight font-cursive">
                 {{ __('Dashboard') }}
             </h2>
-            <a href="{{ route('venue.index') }}" class="bg-blue-200 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" >Back</a>
+            <a href="{{ route('venue.index') }}" class="bg-blue-200 rounded-md p-2 inline-flex items-center justify-center text-gray-300 hover:text-gray-100 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 font-cursive" >Back</a>
         </div>
     </x-slot>
 

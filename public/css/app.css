@@ -11416,7 +11416,7 @@ select {
 }
 
 .font-cursive {
-  font-family: Kaushan, cursive;
+  font-family: Righteous, cursive;
 }
 
 .font-thin {
@@ -31435,6 +31435,7 @@ select {
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 1%, rgba(111, 34, 50,0.8));
 }
 
+​​
 .venue_name_section {
   padding: 15px;
   background-color: #ca2657;
@@ -31505,6 +31506,17 @@ select {
 
 .visitor-party-details {
   box-shadow: 0 10px 15px -3px rgba(149, 149, 149, 0.986), 0 4px 6px -2px rgba(235, 234, 234, 0.685);
+}
+
+#fiestasTitle{
+  text-transform: uppercase;
+  text-align: center;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white, 0 1px 0 #ddd, 0 2px 0 #ccc, 0 3px 0 #bbb, 0 4px 0 #aaa, 0 5px 0 #747474, 0 5px 10px rgba(0,0,0,0.25);
+}
+
+#fiestasSubtitle{
+  text-align: center;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white, 0 1px 0 #ddd, 0 2px 0 #ccc, 0 3px 0 #bbb, 0 4px 0 #aaa, 0 5px 0 #747474, 0 5px 10px rgba(0,0,0,0.25);
 }
 
 @media (min-width: 640px) {
@@ -42181,7 +42193,7 @@ select {
   }
 
   .sm\:font-cursive {
-    font-family: Kaushan, cursive;
+    font-family: Righteous, cursive;
   }
 
   .sm\:font-thin {
@@ -72789,7 +72801,7 @@ select {
   }
 
   .md\:font-cursive {
-    font-family: Kaushan, cursive;
+    font-family: Righteous, cursive;
   }
 
   .md\:font-thin {
@@ -103397,7 +103409,7 @@ select {
   }
 
   .lg\:font-cursive {
-    font-family: Kaushan, cursive;
+    font-family: Righteous, cursive;
   }
 
   .lg\:font-thin {
@@ -134005,7 +134017,7 @@ select {
   }
 
   .xl\:font-cursive {
-    font-family: Kaushan, cursive;
+    font-family: Righteous, cursive;
   }
 
   .xl\:font-thin {
@@ -164613,7 +164625,7 @@ select {
   }
 
   .\32xl\:font-cursive {
-    font-family: Kaushan, cursive;
+    font-family: Righteous, cursive;
   }
 
   .\32xl\:font-thin {
