@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -64,8 +65,23 @@ class VenueProfile extends Component
             'img' => $this->img->getClientOriginalName(),
         ]);
 
-        $this->img->storeAs('public/venue-image', $this->img->getClientOriginalName());
+        DB::transaction( function () {
+            $this->img->storeAs('public/venue-image', $this->img->getClientOriginalName());
+        });
+    }
+
+    public function deleteImg(User $user)
+    {
+        $this->img = $user->img;
+
+        $user->update([
+            $user->img => null,
+        ]);
         
+        DB::transaction( function () {
+            DB::table('users')->update(['img' => null]);
+            Storage::delete([$this->img]);
+        });
     }
 
 
