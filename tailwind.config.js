@@ -11,7 +11,7 @@ module.exports = {
         extend: {
             colors: { 
 
-                red: colors.red,
+              
                 rojo: {
                   light: '#e98d7d',
                   DEFAULT: '#f36e57',
