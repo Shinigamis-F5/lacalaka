@@ -1,10 +1,10 @@
 <x-app-layout>
     <x-slot name="header">
         <div id="cab-dashboard">
-            <h2 class="font-semibold text-xl text-gray-200 leading-tight">
+            <h2 class="font-semibold text-xl text-gray-200 leading-tight font-cursive">
                 <a href="{{ route('dashboard') }}">{{ __('Dashboard') }}</a>
             </h2>
-            <a href="{{ route('venue.show', auth()->user()) }}" class="bg-blue-200 rounded-md p-2 inline-flex items-center justify-center text-gray-800 hover:text-gray-500 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red" >Profile</a>
+            <a href="{{ route('venue.show', auth()->user()) }}" class="bg-rojo-light rounded-md p-2 inline-flex items-center justify-center text-white hover:text-rojo-light hover:bg-rojo focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red" >Profile</a>
         </div>
     </x-slot>
 

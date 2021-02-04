@@ -45,9 +45,9 @@
                                 <a href="#" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Edit</a>
 
                                 @if ($party->is_active == true)
-                                <button wire:click="cancel( {{ $party->id }} )" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-rojo-dark hover:bg-rojo-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Cancel</button>    
+                                <button wire:click="cancel( {{ $party->id }} )" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-rojo-light hover:bg-rojo focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Cancel</button>    
                                 @else
-                                <button wire:click="reActivate( {{ $party->id }} )" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-rojo-dark hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Reactivate</button>
+                                <button wire:click="reActivate( {{ $party->id }} )" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-rojo-light hover:bg-rojo focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-rojo-dark">Reactivate</button>
                                 @endif
 
                             </td>

@@ -4,11 +4,11 @@
         @foreach($followers as $follower)
         @if($loop->first)
         <div class="w-10 h-10 md:w-14 md:h-14 bg-center rounded-full">
-            <img src="{{$follower->img}}" class="w-full h-full rounded-full object-cover" />
+            <img src="/storage/venue-image/{{$follower->img}}" class="w-full h-full rounded-full object-cover" />
         </div>
         @else
         <div class="w-10 h-10 md:w-14 md:h-14 bg-cover rounded-full border-2 border-solid border-rojo-dark -ml-2 md:ml-2 mb-2">
-            <img src="{{$follower->img}}" class="w-full h-full rounded-full object-cover" />
+            <img src="/storage/venue-image/{{$follower->img}}" class="w-full h-full rounded-full object-cover" />
         </div>
         @endif
         @endforeach
@@ -22,7 +22,7 @@
 
 
     <div class="flex items-center xl:mt-0 mt-4 mb-5">
-        <button @if($isFollowing===true) wire:click="unFollow()" @else wire:click="follow()" @endif class="bg-rojo-dark text-l md:text-2xl text-white ml-3 px-4 py-2 rounded items-center">
+        <button @if($isFollowing===true) wire:click="unFollow()" @else wire:click="follow()" @endif class="bg-rojo text-l md:text-2xl text-white ml-3 px-4 py-2 rounded items-center">
              {{$buttonTitle}}
         </button>
 

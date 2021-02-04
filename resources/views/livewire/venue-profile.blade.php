@@ -2,8 +2,8 @@
     <div x-data="{open: false}" class="mb-3">
 
         <div class="flex justify-between mb-3">
-            <h1 class="mb-3"><strong>Profile</strong></h1>
-            <button @click="open=true" wire:click="edit({{ $venue }})" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-rojo hover:bg-rojo-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-rojo">Edit Profile</button>
+            <h1 class="mb-3 font-cursive"><strong>Profile</strong></h1>
+            <button @click="open=true" wire:click="edit({{ $venue }})" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-rojo-light hover:bg-rojo focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-rojo">Edit Profile</button>
         </div>
 
         <div x-show="open" @click.away="open = false" class="grid grid-cols-6 gap-6">
@@ -32,7 +32,7 @@
                 <input type="time" wire:model="openingTimes" name="openingTimes" id="openingTimes" value="{{ $venue->openingTimes }}" class="mt-1 focus:ring-rojo focus:border-rojo block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
             </div>
 
-            <button @click="open=false" wire:click="upload({{ $venue }})" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-rojo-dark hover:bg-rojo-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-rojo">Upload Profile</button>
+            <button @click="open=false" wire:click="upload({{ $venue }})" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-rojo-light hover:bg-rojo focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-rojo">Upload Profile</button>
             
         </div>
     </div>
@@ -47,14 +47,14 @@
             
 
             @if ($venue->img != null)
-                <button wire:click="deleteImg({{ $venue }})" class="mt-2 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-rojo hover:bg-rojo-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-rojo-light">Delete Photo</button>
+                <button wire:click="deleteImg({{ $venue }})" class="mt-2 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-rojo-light hover:bg-rojo focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-rojo-light">Delete Photo</button>
             @else
 
                 <label for="img" class="text-sm font-medium text-gray-700">Upload Image</label>
-                <input type="file" wire:model="img" name="img" id="img" class="mt-2 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-rojo hover:bg-rojo-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-rojo-light accept="image/png, image/jpeg">
+                <input type="file" wire:model="img" name="img" id="img" class="mt-2 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-rojo-light hover:bg-rojo focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-rojo-light accept="image/png, image/jpeg">
                 @error('img') <span class="error">{{ $message }}</span> @enderror
 
-                <button wire:click="storeImg({{ $venue }})" class="mt-2 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-rojo hover:bg-rojo-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-rojo-light">Edit Photo</button>
+                <button wire:click="storeImg({{ $venue }})" class="mt-2 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-rojo-light hover:bg-rojo focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-rojo-light">Edit Photo</button>
             @endif
               
         </div>

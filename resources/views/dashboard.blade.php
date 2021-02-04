@@ -4,7 +4,7 @@
             <h2 class="font-semibold text-xl text-gray-300 leading-tight font-cursive">
                 <a href="{{ route('dashboard') }}">{{ __('Dashboard') }}</a>
             </h2>
-            <a href="{{ route('user.show', auth()->user()) }}" class="bg-rojo-light rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red font-cursive" >Profile</a>
+            <a href="{{ route('user.show', auth()->user()) }}" class="bg-rojo-light rounded-md p-2 inline-flex items-center justify-center text-white hover:text-rojo-light hover:bg-rojo focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red font-cursive" >Profile</a>
         </div>
     </x-slot>
 
