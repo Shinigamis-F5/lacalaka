@@ -1,6 +1,6 @@
 <div>
 
-    <div class="flex flex-wrap overflow-x-auto p-3">
+    <div class="@if(count($followers) === 0) hidden @else flex flex-wrap overflow-x-auto p-3 @endif">
         @foreach($followers as $follower)
         @if($loop->first)
         <div class="w-10 h-10 md:w-14 md:h-14 bg-center rounded-full">
@@ -21,7 +21,7 @@
     </div>
 
 
-    <div class="flex items-center xl:mt-0 mt-4 mb-5">
+    <div class="flex items-end xl:mt-0 mt-4 mb-5">
 
         <button @if($isFollowing===true) wire:click="unFollow()" @else wire:click="follow()" wire:click="unFollow()" @endif class="bg-red text-l md:text-2xl text-white ml-3 px-4 py-2 rounded items-center">
             {{$buttonTitle}}

@@ -47,6 +47,7 @@ class PartyFollowers extends Component
         $user->followParty($this->party);
         $this->isFollowing = true;
         $this->buttonTitle = "Unfollow";
+        $this->mount($this->party->id);
     }
 
     public function unFollow()
