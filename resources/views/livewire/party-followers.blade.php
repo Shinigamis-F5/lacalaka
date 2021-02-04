@@ -4,11 +4,11 @@
         @foreach($followers as $follower)
         @if($loop->first)
         <div class="w-10 h-10 md:w-14 md:h-14 bg-center rounded-full">
-            <img src="{{$follower->img}}" class="w-full h-full rounded-full object-cover" />
+            <img src="/storage/venue-image/{{$follower->img}}" class="w-full h-full rounded-full object-cover" />
         </div>
         @else
         <div class="w-10 h-10 md:w-14 md:h-14 bg-cover rounded-full border-2 border-solid border-rojo-dark -ml-2 md:ml-2 mb-2">
-            <img src="{{$follower->img}}" class="w-full h-full rounded-full object-cover" />
+            <img src="/storage/venue-image/{{$follower->img}}" class="w-full h-full rounded-full object-cover" />
         </div>
         @endif
         @endforeach
