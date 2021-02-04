@@ -34,4 +34,6 @@ class VenueProfileTest extends TestCase
             ->get('/venue-profile')
             ->assertSee($name);
     }
+
+    
 }

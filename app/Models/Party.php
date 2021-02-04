@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class Party extends Model
 {
@@ -18,10 +19,15 @@ class Party extends Model
         'date',
         'time',
         'location',
-        'style',
+        'style_id',
         'user_id',
         
     ];
+
+    public function getCoverUrl()
+    {
+        return Storage::url($this->cover);
+    }
 
     public function venue()
     {
@@ -31,5 +37,10 @@ class Party extends Model
     public function users()
     {
         return $this->belongsToMany(User::class);
+    }
+
+    public function style() 
+    {
+        return $this->belongsTo(Style::class);
     }
 }
