@@ -31960,10 +31960,15 @@ select {
   width: 80%;
   margin: 0px auto;
   padding: 20px;
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 1%, rgba(111, 34, 50,0.8));
 }
 
-​​
+#fiestasTitle{
+  text-transform: uppercase;
+  text-align: center;
+  
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white, 0 1px 0 #ddd, 0 2px 0 #ccc, 0 3px 0 #bbb, 0 4px 0 #aaa, 0 5px 0 #747474, 0 5px 10px rgba(0,0,0,0.25);
+}
+
 .venue_name_section {
   padding: 15px;
   background-color: #ca2657;
@@ -31994,7 +31999,6 @@ select {
 .data {
   width: 100%;
   display: inline-flex;
-  margin-top: 50px;
 }
 
 .address {
@@ -32003,7 +32007,6 @@ select {
 }
 
 .address i {
-  display: block;
   margin-bottom: 10px;
 }
 
@@ -32012,7 +32015,6 @@ select {
 }
 
 .opening_time i {
-  display: block;
   margin-bottom: 10px;
 }
 
@@ -102007,30 +102009,6 @@ select {
     border-color: rgba(254, 243, 199, var(--tw-border-opacity));
   }
 
-.container {
-  width: 80%;
-  margin: 0px auto;
-  padding: 20px;
-}
-
-#fiestasTitle{
-  text-transform: uppercase;
-  text-align: center;
-  color: gray;
-  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white, 0 1px 0 #ddd, 0 2px 0 #ccc, 0 3px 0 #bbb, 0 4px 0 #aaa, 0 5px 0 #747474, 0 5px 10px rgba(0,0,0,0.25);
-}
-
-.venue_name_section {
-  padding: 15px;
-  background-color: #ca2657;
-  color: white;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Salsa';
-  font-size: 3vw;
-}
   .lg\:border-yellow-200 {
     --tw-border-opacity: 1;
     border-color: rgba(253, 230, 138, var(--tw-border-opacity));
@@ -102051,10 +102029,6 @@ select {
     border-color: rgba(245, 158, 11, var(--tw-border-opacity));
   }
 
-.data {
-  width: 100%;
-  display: inline-flex;
-}
   .lg\:border-yellow-600 {
     --tw-border-opacity: 1;
     border-color: rgba(217, 119, 6, var(--tw-border-opacity));
@@ -102065,9 +102039,6 @@ select {
     border-color: rgba(180, 83, 9, var(--tw-border-opacity));
   }
 
-.address i {
-  margin-bottom: 10px;
-}
   .lg\:border-yellow-800 {
     --tw-border-opacity: 1;
     border-color: rgba(146, 64, 14, var(--tw-border-opacity));
@@ -102078,9 +102049,6 @@ select {
     border-color: rgba(120, 53, 15, var(--tw-border-opacity));
   }
 
-.opening_time i {
-  margin-bottom: 10px;
-}
   .lg\:border-green-50 {
     --tw-border-opacity: 1;
     border-color: rgba(236, 253, 245, var(--tw-border-opacity));
@@ -102106,20 +102074,6 @@ select {
     border-color: rgba(52, 211, 153, var(--tw-border-opacity));
   }
 
-#fiestasTitle{
-  text-transform: uppercase;
-  text-align: center;
-  text-shadow: -1px 0 white, 
-                0 1px white, 
-                1px 0 white, 
-                0 -1px white, 
-                0 1px 0 #ddd, 
-                0 2px 0 #ccc, 
-                0 3px 0 #bbb, 
-                0 4px 0 #aaa, 
-                0 5px 0 #747474, 
-                0 5px 10px rgba(0,0,0,0.25);
-}
   .lg\:border-green-500 {
     --tw-border-opacity: 1;
     border-color: rgba(16, 185, 129, var(--tw-border-opacity));
