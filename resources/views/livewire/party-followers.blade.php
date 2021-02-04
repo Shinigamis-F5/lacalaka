@@ -4,11 +4,12 @@
         @foreach($followers as $follower)
         @if($loop->first)
         <div class="w-10 h-10 md:w-14 md:h-14 bg-center rounded-full">
-            <img src="/storage/venue-image/{{$follower->img}}" class="w-full h-full rounded-full object-cover" />
+            
+            <img src="/storage/venue-image/{{$follower->img}}" class="w-full h-full rounded-full object-cover @if($isFollowing === false) hidden @endif" />
         </div>
         @else
         <div class="w-10 h-10 md:w-14 md:h-14 bg-cover rounded-full border-2 border-solid border-rojo-dark -ml-2 md:ml-2 mb-2">
-            <img src="/storage/venue-image/{{$follower->img}}" class="w-full h-full rounded-full object-cover" />
+            <img src="/storage/venue-image/{{$follower->img}}" class="w-full h-full rounded-full object-cover @if($isFollowing === false) hidden @endif" />
         </div>
         @endif
         @endforeach
@@ -17,7 +18,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
             </svg>
         </button>
-        <p class="ml-2 self-center text-red">See who is going to the party</p>
+        <p class="ml-2 self-center text-red text-white">See who is going to the party</p>
     </div>
 
 

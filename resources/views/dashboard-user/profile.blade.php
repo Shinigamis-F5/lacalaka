@@ -4,7 +4,7 @@
             <h2 class="font-semibold text-xl text-gray-300 leading-tight font-cursive">
                 {{ __('Dashboard') }}
             </h2>
-            <a href="{{ route('home') }}" class="bg-blue-200 rounded-md p-2 inline-flex items-center justify-center text-gray-300 hover:text-gray-100 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 font-cursive">Back</a>
+            <a href="{{ route('home') }}" class="bg-rojo-light rounded-md p-2 inline-flex items-center justify-center text-gray-300 hover:text-gray-100 hover:bg-rojo focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 font-cursive">Back</a>
         </div>
     </x-slot>
 

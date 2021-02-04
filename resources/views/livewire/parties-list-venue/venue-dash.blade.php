@@ -25,15 +25,15 @@
                     @foreach ($parties as $party)
                         <tr class="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
                             <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
-                                <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Name</span>
+                                <span class="lg:hidden absolute top-0 left-0 bg-rojo-light px-2 py-1 text-xs font-bold uppercase">Name</span>
                                 {{ $party->title }}
                             </td>
                             <td class="w-full lg:w-auto p-3 text-gray-800 border border-b text-center block lg:table-cell relative lg:static">
-                                <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Date</span>
+                                <span class="lg:hidden absolute top-0 left-0 bg-rojo-light px-2 py-1 text-xs font-bold uppercase">Date</span>
                                 {{ $party->date }}
                             </td>
                             <td class="w-full lg:w-auto p-3 text-gray-800 border border-b text-center block lg:table-cell relative lg:static">
-                                <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Status</span>
+                                <span class="lg:hidden absolute top-0 left-0 bg-rojo-light px-2 py-1 text-xs font-bold uppercase">Status</span>
                                     @if ($party->is_active == true)
                                     <span class="rounded bg-yellow-400 py-1 px-3 text-xs font-bold">active</span>
                                     @else
@@ -41,7 +41,7 @@
                                     @endif
                             </td>
                             <td class="w-full lg:w-auto p-3 text-gray-800 border border-b text-center block lg:table-cell relative lg:static">
-                                <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Actions</span>
+                                <span class="lg:hidden absolute top-0 left-0 bg-rojo-light px-2 py-1 text-xs font-bold uppercase">Actions</span>
                                 <a href="#" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Edit</a>
 
                                 @if ($party->is_active == true)
