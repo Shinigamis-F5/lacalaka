@@ -15,7 +15,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $user = Auth::user();
+        return view('dashboard-user.dashboard', ['user' => $user]);
     }
 
     /**
@@ -47,7 +48,10 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        //
+
+        return view('dashboard-user.profile', [
+            'user' => $user,
+        ]);
     }
 
     /**
@@ -83,6 +87,4 @@ class UserController extends Controller
     {
         //
     }
-
-    
 }
