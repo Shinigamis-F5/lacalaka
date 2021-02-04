@@ -1,11 +1,11 @@
 <div class="visitor-party-details md:w-3/5 md:mx-auto pb-2 bg-gray-900">
     <div>
-        <div class=" md:container md:md py-5 @if(!$party->is_active) bg-gray-300 @else bg-rojo-dark @endif">
+        <div class=" md:container md:md py-5 @if(!$party->is_active) bg-gray-300 @else bg-rojo @endif">
             <h2 class="font-bold text-center uppercase text-l xl:text-3xl text-xl text-gray-50">{{$party->title}}</h2>
         </div>
         <div class="w-full h-48 md:h-56 b-clip-content relative">
             @if(!$party->is_active)
-            <div class="absolute top-0 opacity-75 w-full z-50 h-full md:h-56 bg-rojo-dark ">
+            <div class="absolute top-0 opacity-75 w-full z-50 h-full md:h-56 bg-rojo ">
                 <h2 class=" font-bold text-center text-xl uppercase py-12 text-white p-3">This Party has been Cancelled! <br> Sorry :-( </h2>
             </div>
             @else

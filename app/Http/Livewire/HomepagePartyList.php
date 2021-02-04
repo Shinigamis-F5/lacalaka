@@ -6,6 +6,7 @@ use Livewire\Component;
 use App\Models\Party;
 use Livewire\WithPagination;
 
+
 class HomepagePartyList extends Component
 {
     
@@ -19,7 +20,8 @@ class HomepagePartyList extends Component
     public $style;
 
     public function mount() {
-        $this->filter = Party::paginate($this->perPage);  
+        $this->filter = Party::paginate($this->perPage); 
+       
     }
     
     public function render()
