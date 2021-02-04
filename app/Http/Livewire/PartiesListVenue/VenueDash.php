@@ -50,7 +50,7 @@ class VenueDash extends Component
                 'date' => $this->date,
                 'time' => $this->time,
                 'location' => $this->location,
-                'style' => $this->style,
+                'style_id' => $this->style,
                 'is_active' => '1',
                 'user_id' => auth()->user()->id,
             ]);

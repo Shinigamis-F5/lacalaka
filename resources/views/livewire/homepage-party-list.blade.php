@@ -5,7 +5,7 @@
                     <h1 class="text-3xl font-bold font-cursive">THIS WEEK</h1>
                     <p class="text-sm text-gray-300 uppercase font-bold font-cursive">THIS WEEK</p>
                 </div>
-                <div class="grid grid-cols-2 -mx-0.5 overflow-hidden">
+                <div class="grid grid-cols-2 -mx-0.5 mb-20">
 
                     @if (count($partyList) == 0)  
                     <div class="mb-5 mr-3 mt-5">
