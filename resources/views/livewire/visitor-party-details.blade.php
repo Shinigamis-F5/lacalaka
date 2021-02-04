@@ -6,7 +6,7 @@
         <div class="w-full h-48 md:h-56 b-clip-content relative">
             @if(!$party->is_active)
             <div class="absolute top-0 opacity-75 w-full z-50 h-full md:h-56 bg-red-600 ">
-                <h2 class=" font-bold text-center text-xl uppercase py-12 text-white p-3">This Party has been Cancelled! <br> Sorry :-( </h2>
+                <h2 class=" font-bold text-center text-3xl uppercase py-12 text-white p-3">This Party has been Cancelled! <br> Sorry :-( </h2>
 
             </div>
             @else
