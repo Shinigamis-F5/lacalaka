@@ -14,7 +14,7 @@ class HomepagePartyList extends Component
     
     protected $listeners = ['filterByStyle' => 'filterByStyle', 'loadMore' => 'loadMore'];
     private $filter;
-    public $perPage = 2;
+    public $perPage = 4;
     public $isFiltered = false;
     public $style;
 
@@ -38,14 +38,14 @@ class HomepagePartyList extends Component
     }
     
     public function loadMore () {
-        $this->perPage = $this->perPage + 2;
+        $this->perPage = $this->perPage + 4;
         $this->mount();
         
     }
 
     public function loadMoreFiltered () {
         $style = $this->style;
-        $this->perPage = $this->perPage + 2;
+        $this->perPage = $this->perPage + 4;
         $this->filterByStyle($style) ;
         
     }
