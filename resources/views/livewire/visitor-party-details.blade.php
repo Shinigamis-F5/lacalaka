@@ -1,11 +1,11 @@
 <div class="visitor-party-details md:w-3/5 md:mx-auto pb-2 bg-gray-900">
     <div>
-        <div class=" md:container md:md py-5 @if(!$party->is_active) bg-gray-300 @else bg-red @endif">
+        <div class=" md:container md:md py-5 @if(!$party->is_active) bg-gray-300 @else bg-rojo-dark @endif">
             <h2 class="font-bold text-center uppercase text-l xl:text-3xl text-xl text-gray-50">{{$party->title}}</h2>
         </div>
         <div class="w-full h-48 md:h-56 b-clip-content relative">
             @if(!$party->is_active)
-            <div class="absolute top-0 opacity-75 w-full z-50 h-full md:h-56 bg-red-600 ">
+            <div class="absolute top-0 opacity-75 w-full z-50 h-full md:h-56 bg-rojo-dark ">
                 <h2 class=" font-bold text-center text-xl uppercase py-12 text-white p-3">This Party has been Cancelled! <br> Sorry :-( </h2>
             </div>
             @else
@@ -41,9 +41,9 @@
                         <p class="text-white text-lg md:text-xl pl-1">{{$party->location}}</p>
 
                     </div>
-                    <div class="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="34" viewBox="0 0 24 24" stroke="#f36e57">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                    <div class="flex">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="34" viewBox="0 0 24 24" stroke="#ec5742">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                         </svg>
                         <p class="text-white text-lg md:text-xl pl-1"><a href="{{route('venue.show', $venue)}}">{{$venue->name}}</a></p>
 

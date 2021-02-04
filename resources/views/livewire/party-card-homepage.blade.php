@@ -1,7 +1,7 @@
 <div class="mb-5 mr-3 mt-5">
     <a href="{{ route('party.details', $party->id) }}" class="block rounded-lg relative p-2 transform transition-all duration-300 scale-100 hover:scale-95 bg-opacity-2 bg-gray-800" style="background:linear-gradient(rgba(38, 34, 39, 0.5), rgba(38, 34, 39, 0.5)), url(/photo-parties/{{$party->cover}}) center; background-size: cover">
         <div class="absolute top-0 right-0 -mt-3 mr-3">
-            <div class="rounded-full bg-indigo-500 text-white text-xs py-1 pl-2 pr-3 leading-none"><i class="mdi mdi-skull text-base align-middle"></i> <span class="align-middle">FRESH</span></div>
+            <div class="rounded-full bg-red text-white text-xs py-1 pl-2 pr-3 leading-none"><i class="mdi mdi-skull text-base align-middle"></i> <span class="align-middle">FRESH</span></div>
         </div>
         <div class="h-48"></div>
         <h2 class="text-white text-2xl font-bold leading-tight mb-3 pr-0">{{$party->title}}</h2>

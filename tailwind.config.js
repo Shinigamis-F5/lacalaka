@@ -5,18 +5,20 @@ module.exports = {
         "./storage/framework/views/*.php",
         "./resources/views/**/*.blade.php",
     ],
-
-    theme: {
-        colors: { 
-            
-            red: {
-              light: '#e98d7d',
-              DEFAULT: '#f36e57',
-              dark: '#ed4023',
-            },
-            
-        },
+    
+    theme: { 
+                
         extend: {
+            colors: { 
+
+                red: colors.red,
+                rojo: {
+                  light: '#e98d7d',
+                  DEFAULT: '#f36e57',
+                  dark: '#ed4023',
+                },
+                
+            },
             fontFamily: {
                 sans: ["Nunito", ...defaultTheme.fontFamily.sans],
                 cursive: ["Righteous", "cursive"],

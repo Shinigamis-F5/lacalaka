@@ -7,13 +7,13 @@
             <img src="{{$follower->img}}" class="w-full h-full rounded-full object-cover" />
         </div>
         @else
-        <div class="w-10 h-10 md:w-14 md:h-14 bg-cover rounded-full border-2 border-solid border-red -ml-2 md:ml-2 mb-2">
+        <div class="w-10 h-10 md:w-14 md:h-14 bg-cover rounded-full border-2 border-solid border-rojo-dark -ml-2 md:ml-2 mb-2">
             <img src="{{$follower->img}}" class="w-full h-full rounded-full object-cover" />
         </div>
         @endif
         @endforeach
-        <button wire:click="showMoreFollowers()" class="w-10 h-10 md:w-14 md:h-14 bg-black rounded-full border-2 border-solid border-red -ml-2" aria-haspopup="true" aria-expanded="true">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#f41f7b">
+        <button wire:click="showMoreFollowers()" class="w-10 h-10 md:w-14 md:h-14 bg-black rounded-full border-2 border-solid border-rojo-dark -ml-2" aria-haspopup="true" aria-expanded="true">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#ec5742">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
             </svg>
         </button>
@@ -21,10 +21,9 @@
     </div>
 
 
-    <div class="flex justify-end xl:mt-0 mt-4 mb-5">
-
-        <button @if($isFollowing===true) wire:click="unFollow()" @else wire:click="follow()" wire:click="unFollow()" @endif class="bg-red text-l md:text-2xl text-white ml-3 px-4 py-2 rounded items-end">
-            {{$buttonTitle}}
+    <div class="flex items-center xl:mt-0 mt-4 mb-5">
+        <button wire:click="follow()" class="bg-rojo-dark text-l md:text-2xl text-white ml-3 px-4 py-2 rounded items-center">
+            Follow
         </button>
 
     </div>
