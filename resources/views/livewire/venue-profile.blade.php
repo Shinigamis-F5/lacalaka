@@ -42,7 +42,7 @@
             @if ($venue->img == null)
                 <img src="/images/default-image.png" alt="">                
             @else
-                <img src="/venue-image/{{ $venue->img }}" alt="">
+                <img src="/venue-images/{{ $venue->img }}" alt="">
             @endif
             
 
