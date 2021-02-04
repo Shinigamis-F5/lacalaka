@@ -13,11 +13,11 @@ class UserProfile extends Component
 {
     use WithFileUploads;
     public $user;
-    public $img;
-    
-    public function mount(User $user) {
-        $this->user = $user;
+    public $address, $city, $phone, $img;
 
+    public function mount(User $user)
+    {
+        $this->user = $user;
     }
     public function render()
     {
@@ -25,33 +25,39 @@ class UserProfile extends Component
         return view('livewire.user-profile', ['parties' => $parties]);
     }
 
-    public function saveImage() 
+    public function saveImage()
     {
         $this->validate([
             'img' => ['required', 'image', 'max:1024'],
         ]);
-        
+
         $this->user->update([
             'img' => $this->img->getClientOriginalName(),
         ]);
 
-        DB::transaction( function () {
+        DB::transaction(function () {
             $this->img->storeAs('public/user-image', $this->img->getClientOriginalName());
         });
-    
     }
 
-     public function deleteImg(User $user)
+    public function deleteImg(User $user)
     {
         $this->img = $user->img;
 
         $user->update([
             $user->img => null,
         ]);
-        
-        DB::transaction( function () {
+
+        DB::transaction(function () {
             DB::table('users')->update(['img' => null]);
             Storage::delete([$this->img]);
         });
+    }
+
+    public function edit(User $user)
+    {
+        $this->address = $user->address;
+        $this->city = $user->city;
+        $this->phone = $user->phone;
     }
 }
