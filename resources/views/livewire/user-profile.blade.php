@@ -12,10 +12,10 @@
         <div class=" ml-4 mt-3">
             <h2 class="font-bold uppercase text-xl xl:text-3xl text-xl mb-8 text-gray-50">{{$user->name}}</h2>
 
-            @if ($user->img != null)
             <div class="flex-col">
+            @if ($user->img != null)
                 <button wire:click="deleteImg({{ $user }})" class="mt-2 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-rojo-dark hover:bg-rojo-light focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Delete Photo</button>
-                @else
+            @else
 
                 <label for="img" class=" block text-sm font-medium text-gray-50">Upload Image</label>
                 <input type="file" wire:model="img" name="img" id="img" class="mt-2 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-rojo-dark hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 accept=" image/png, image/jpeg">
@@ -28,9 +28,9 @@
         </div>
     </section>
 
-    <div x-data="{ open: false }" class="pt-10">
-        <button @click="open = true" wire:click="edit({{ $user }})" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-rojo-dark hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Edit Profile</button>
-        <div x-show="open" @click.away="open = false" class="pt-10 grid grid-cols-6 gap-6">
+    <div class="pt-10">
+        <button wire:click="edit({{ $user }})" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-rojo-dark hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Edit Profile</button>
+        <div class="pt-10 grid grid-cols-6 gap-6">
 
             <div class="col-span-6 sm:col-span-3">
                 <label for="address" class="block text-sm font-medium text-gray-50">Address</label>
@@ -46,7 +46,7 @@
                 <input type="text" wire:model="phone" name="phone" id="phone" value="{{ $user->phone }}" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
             </div>
 
-            <button @click="open=false" wire:click="upload({{ $user }})" class="p-2 border border-transparent shadow-sm font-medium rounded-md text-white bg-rojo-dark hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Save</button>
+            <button wire:click="upload({{ $user }})" class="p-2 border border-transparent shadow-sm font-medium rounded-md text-white bg-rojo-dark hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Save</button>
 
         </div>
 

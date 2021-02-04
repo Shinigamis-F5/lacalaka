@@ -61,7 +61,6 @@ class VenueProfile extends Component
             'img' => ['required', 'image', 'max:1024'],
         ]);
         
-        dd($this->img);
         $user->update([
             'img' => $this->img->getClientOriginalName(),
         ]);

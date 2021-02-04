@@ -12,15 +12,34 @@ use Livewire\WithFileUploads;
 class UserProfile extends Component
 {
     use WithFileUploads;
-    public $user;
     public $address, $city, $phone, $img;
 
-   
+
+
     public function render()
     {
+        $user = Auth::user();
         $this->user = Auth::user();
-        $parties = $this->user->partiesUser()->get();
-        return view('livewire.user-profile', ['parties' => $parties]);
+        $parties = $user->partiesUser()->get();
+        return view('livewire.user-profile', ['parties' => $parties, 'user' => $user]);
+    }
+
+    public function edit(User $user)
+    {
+        $this->address = $user->address;
+        $this->city = $user->city;
+        $this->phone = $user->phone;
+    }
+
+    public function upload(User $user)
+    {
+        $user->update([
+            'address' => $this->address,
+            'city' => $this->city,
+            'phone' => $this->phone,
+        ]);
+
+        $user->saveOrFail();
     }
 
     public function storeImg(User $user)
@@ -49,22 +68,5 @@ class UserProfile extends Component
             DB::table('users')->update(['img' => null]);
             Storage::delete([$this->img]);
         });
-    }
-    public function upload(User $user)
-    {
-        $user->update([
-            'address' => $this->address,
-            'city' => $this->city,
-            'phone' => $this->phone,
-        ]);
-
-        $user->saveOrFail();
-    }
-
-    public function edit(User $user)
-    {
-        $this->address = $user->address;
-        $this->city = $user->city;
-        $this->phone = $user->phone;
     }
 }
