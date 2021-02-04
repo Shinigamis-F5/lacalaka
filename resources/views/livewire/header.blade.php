@@ -27,7 +27,7 @@
             @if (auth()->user()->role == "venue")
             <a href="{{ url('/venue') }}" class="text-base  text-gray-200 font-cursive hover:text-rojo"><i class="mdi mdi-skull "></i>Dashboard</a>
             @else
-            <a href="{{ url('/dashboard') }}" class="text-base  text-gray-200 font-cursive hover:text-rojo"><i class="mdi mdi-skull"></i>Dashboard</a>
+            <a href="{{route('user.show', auth()->user() )}}" class="text-base  text-gray-200 font-cursive hover:text-rojo"><i class="mdi mdi-skull"></i>Dashboard</a>
             @endif
             @else
             <div class="flex-row">

@@ -15,28 +15,25 @@ class UserProfile extends Component
     public $user;
     public $address, $city, $phone, $img;
 
-    public function mount(User $user)
-    {
-        $this->user = $user;
-    }
+   
     public function render()
     {
+        $this->user = Auth::user();
         $parties = $this->user->partiesUser()->get();
         return view('livewire.user-profile', ['parties' => $parties]);
     }
 
-    public function saveImage()
+    public function storeImg(User $user)
     {
         $this->validate([
             'img' => ['required', 'image', 'max:1024'],
         ]);
-
-        $this->user->update([
+        $user->update([
             'img' => $this->img->getClientOriginalName(),
         ]);
 
         DB::transaction(function () {
-            $this->img->storeAs('public/user-image', $this->img->getClientOriginalName());
+            $this->img->storeAs('public/venue-image', $this->img->getClientOriginalName());
         });
     }
 
@@ -52,6 +49,16 @@ class UserProfile extends Component
             DB::table('users')->update(['img' => null]);
             Storage::delete([$this->img]);
         });
+    }
+    public function upload(User $user)
+    {
+        $user->update([
+            'address' => $this->address,
+            'city' => $this->city,
+            'phone' => $this->phone,
+        ]);
+
+        $user->saveOrFail();
     }
 
     public function edit(User $user)

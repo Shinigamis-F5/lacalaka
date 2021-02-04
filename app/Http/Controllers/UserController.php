@@ -16,7 +16,7 @@ class UserController extends Controller
     public function index()
     {
         $user = Auth::user();
-        return redirect()->route('user.show', $user->id);
+        return view('dashboard-user.dashboard', ['user' => $user]);
     }
 
     /**
