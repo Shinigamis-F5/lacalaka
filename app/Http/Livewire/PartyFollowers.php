@@ -24,6 +24,7 @@ class PartyFollowers extends Component
     }
 
     public function checkUser () {
+        
         if (Auth::user() && $this->party->users->contains(Auth::user())) {
             $this->isFollowing = true;
             $this->buttonTitle = "Unfollow";
@@ -39,6 +40,7 @@ class PartyFollowers extends Component
 
     public function follow()
     {
+        
         if (!Auth::user()) {
             return redirect()->to('login');
         }
@@ -65,7 +67,6 @@ class PartyFollowers extends Component
 
     public function showMoreFollowers()
     {
-
         $this->numberOfFollowers = $this->numberOfFollowers + 3;
         $this->mount($this->party->id);
     }

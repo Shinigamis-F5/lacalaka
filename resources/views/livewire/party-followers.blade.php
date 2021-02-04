@@ -22,8 +22,8 @@
 
 
     <div class="flex items-center xl:mt-0 mt-4 mb-5">
-        <button wire:click="follow()" class="bg-rojo-dark text-l md:text-2xl text-white ml-3 px-4 py-2 rounded items-center">
-            Follow
+        <button @if($isFollowing===true) wire:click="unFollow()" @else wire:click="follow()" @endif class="bg-rojo-dark text-l md:text-2xl text-white ml-3 px-4 py-2 rounded items-center">
+             {{$buttonTitle}}
         </button>
 
     </div>
