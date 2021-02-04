@@ -7,7 +7,8 @@
             <a href="{{route('home')}}">
                 <img src="https://images.vexels.com/media/users/3/184839/isolated/lists/075c413496f834ab41b55c283434f614-calavera-mexicana-calavera-plana.png" class="w-20 h-20 mr-2">
             </a>
-            <h1 class="uppercase tracking-wide font-bold font-cursive text-center text-4xl md:text-6xl lg:text-8xl text-gray-400 shadow-2xl mx-3">Fiestas a la Carta</h1>
+            <h1 id="fiestasTitle" class="tracking-wide font-cursive text-4xl md:text-6xl lg:text-8xl mx-3">Fiestas a la Carta</h1>
+            
             
             <h3 class="relative mx-3 text-base font-bold md:block md:text-2xl lg:text-3xl text-gray-300"><i class="mdi mdi-skull"></i> La Calaka</h3>
         

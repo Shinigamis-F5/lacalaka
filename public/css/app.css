@@ -11416,7 +11416,7 @@ select {
 }
 
 .font-cursive {
-  font-family: Kaushan, cursive;
+  font-family: Salsa, cursive;
 }
 
 .font-thin {
@@ -31434,6 +31434,13 @@ select {
   padding: 20px;
 }
 
+#fiestasTitle{
+  text-transform: uppercase;
+  text-align: center;
+  color: gray;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white, 0 1px 0 #ddd, 0 2px 0 #ccc, 0 3px 0 #bbb, 0 4px 0 #aaa, 0 5px 0 #747474, 0 5px 10px rgba(0,0,0,0.25);
+}
+
 .venue_name_section {
   padding: 15px;
   background-color: #ca2657;
@@ -42177,7 +42184,7 @@ select {
   }
 
   .sm\:font-cursive {
-    font-family: Kaushan, cursive;
+    font-family: Salsa, cursive;
   }
 
   .sm\:font-thin {
@@ -72785,7 +72792,7 @@ select {
   }
 
   .md\:font-cursive {
-    font-family: Kaushan, cursive;
+    font-family: Salsa, cursive;
   }
 
   .md\:font-thin {
@@ -103393,7 +103400,7 @@ select {
   }
 
   .lg\:font-cursive {
-    font-family: Kaushan, cursive;
+    font-family: Salsa, cursive;
   }
 
   .lg\:font-thin {
@@ -134001,7 +134008,7 @@ select {
   }
 
   .xl\:font-cursive {
-    font-family: Kaushan, cursive;
+    font-family: Salsa, cursive;
   }
 
   .xl\:font-thin {
@@ -164609,7 +164616,7 @@ select {
   }
 
   .\32xl\:font-cursive {
-    font-family: Kaushan, cursive;
+    font-family: Salsa, cursive;
   }
 
   .\32xl\:font-thin {

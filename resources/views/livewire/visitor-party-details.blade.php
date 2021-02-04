@@ -1,6 +1,6 @@
 <div class="visitor-party-details md:w-3/5 md:mx-auto pb-2 bg-gray-900 ">
     <div>
-        <div class=" md:container md:md py-5 bg-pink-500">
+        <div class="md:container md:md py-5 bg-pink-500">
             <h2 class="font-bold text-center uppercase text-l xl:text-3xl text-xl text-gray-50">{{$party->title}}</h2>
         </div>
 
