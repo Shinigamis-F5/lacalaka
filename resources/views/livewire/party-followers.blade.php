@@ -21,9 +21,9 @@
     </div>
 
 
-    <div class="flex items-end xl:mt-0 mt-4 mb-5">
+    <div class="flex justify-end xl:mt-0 mt-4 mb-5">
 
-        <button @if($isFollowing===true) wire:click="unFollow()" @else wire:click="follow()" wire:click="unFollow()" @endif class="bg-red text-l md:text-2xl text-white ml-3 px-4 py-2 rounded items-center">
+        <button @if($isFollowing===true) wire:click="unFollow()" @else wire:click="follow()" wire:click="unFollow()" @endif class="bg-red text-l md:text-2xl text-white ml-3 px-4 py-2 rounded items-end">
             {{$buttonTitle}}
         </button>
 
