@@ -10,7 +10,7 @@
             </div>
             @else
                 <div class="w-full h-48 md:h-56 b-clip-content">
-                    <img src="/photo-parties/{{ $party->cover }}" class="w-full h-full object-cover" />
+                    <img src="/storage/photos-parties/{{ $party->cover }}" class="w-full h-full object-cover" />
                 </div>
             @endif
         </div>
