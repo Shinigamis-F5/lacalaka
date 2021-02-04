@@ -40,7 +40,19 @@ class PartyDetailsTest extends TestCase
         $user = User::factory(10)->create();
         $party = Party::factory()->create();
         $this->actingAs(User::factory()->create());
-        Livewire::test(PartyFollowers::class)
-            ->call('follow');
+        Livewire::test(PartyFollowers::class, ['id' => $party->id])
+            ->call('follow')
+            ->assertSet('isFollowing', true);
+    }
+
+    public function test_unRegister_user_can_not_follow_party()
+    {
+        $style = Style::create(['id' => 1, 'style' => 'Rock', 'style_description' => 'agagsgagg']);
+        $style = Style::create(['id' => 2, 'style' => 'Punk', 'style_description' => 'agagsgagg']);
+        $user = User::factory(10)->create();
+        $party = Party::factory()->create();
+        Livewire::test(PartyFollowers::class, ['id' => $party->id])
+            ->call('follow')
+            ->assertRedirect('login');;
     }
 }
