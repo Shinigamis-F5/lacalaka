@@ -6,7 +6,7 @@
                     <h1>{{ $user->organization }}</h1>
                 </div><hr>
                 <div class="venue_img_section">
-                    <img id="venue_img" src="{{ $user->img }}" alt="Image">
+                    <img id="venue_img" src="/venue-images/{{ $user->img }}" alt="Image">
                 </div><hr>
                 <div class="bg-black">
                     <div class="description text-gray-400 font-bold pt-5 px-4">
