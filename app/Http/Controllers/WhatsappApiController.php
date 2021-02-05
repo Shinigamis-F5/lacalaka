@@ -15,11 +15,11 @@ class WhatsappApiController extends Controller
         $apiNumber = env('NEXMO_NUMBER');
 
         $partyVenue = User::find($party->user_id);
-        $number = $partyVenue->phone;
+        $number = 34611086304; // $partyVenue->phone;
         $msg = "You just cancelled a party ($party->title) that you announced on https://lacalaka.party/party/$party->id";
 
         $params = [
-            "to" => ["type" => "whatsapp", "number" => $number],
+            "to" => ["type" => "whatsapp", "number" => "$number"],
             "from" => ["type" => "whatsapp", "number" => "$apiNumber"],
             "message" => [
                 "content" => [
@@ -35,7 +35,5 @@ class WhatsappApiController extends Controller
         $headers = ["Authorization" => "Basic " . base64_encode("$apiKey:$apiSecret")];
         $response = $client->request('POST', $url, ["headers" => $headers, "json" => $params]);
         $data = $response->getBody();
-
-        return back();
     }
 }

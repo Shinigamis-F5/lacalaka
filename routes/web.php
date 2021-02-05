@@ -31,8 +31,6 @@ Route::resource('user', UserController::class)->middleware('auth');
 Route::resource('venue', VenueController::class)->middleware('auth');
 // Route::resource('party', PartyController::class);
 
-Route::get('/test', [WhatsappApiController::class, 'sendMsg'])->name('test');
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
