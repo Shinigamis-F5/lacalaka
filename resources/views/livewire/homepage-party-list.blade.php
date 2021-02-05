@@ -33,7 +33,7 @@
             </div>
             <div x-data: class="bg-gray-800 absolute bottom-0 w-full border-t border-gray-200 flex">
 
-                <button @if($isFiltered===true) wire:click="loadMoreFiltered()" @else wire:click="loadMore()" @endif class="flex flex-grow items-center justify-center p-2 text-gray-500 hover:text-red-dark">
+                <button @if($isFiltered===true) wire:click="loadMoreFiltered()" @else wire:click="loadMore()" @endif class="flex flex-grow items-center justify-center p-2 text-gray-500 hover:text-rojo">
                     <div class="text-center">
                         <span class="block h-8 text-3xl leading-8">
 
