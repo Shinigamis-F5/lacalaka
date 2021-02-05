@@ -42,6 +42,7 @@
         </div>
         @endif
 
+        @if(Request::path() == '/')
         <h3 class="relative text-large font-bold md:block md:text-3xl lg:text-5xl text-white font-cursive ml-2"><i class="mdi mdi-skull"></i> Find your Party <i class="mdi mdi-skull"></i></h3>
 
         <div x-data="{ showPartyStyles: false }" class="relative">
@@ -56,5 +57,6 @@
                 @endforeach
                 </ol>
         </div>
+        @endif
     </nav>
 </header>
